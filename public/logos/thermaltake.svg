@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70">
+  <!-- TT mark -->
+  <rect x="6" y="14" width="16" height="42" fill="#1a1a1a"/>
+  <rect x="2" y="14" width="28" height="10" fill="#1a1a1a"/>
+  <rect x="30" y="14" width="16" height="42" fill="#1a1a1a"/>
+  <rect x="26" y="14" width="28" height="10" fill="#1a1a1a"/>
+  <rect x="38" y="18" width="8" height="8" fill="white"/>
+  <!-- thermaltake text -->
+  <text x="155" y="52" font-family="Arial,sans-serif" font-size="22" font-weight="400" fill="#888" text-anchor="middle" letter-spacing="0.5">thermaltake</text>
+</svg>

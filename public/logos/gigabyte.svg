@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- G lettermark -->
+  <path d="M18,12 A24,24 0 1,0 42,52 L42,38 L28,38 L28,48 L34,48 A16,16 0 1,1 18,28Z" fill="#1565C0"/>
+  <path d="M36,38 L48,38 L48,52 L36,52Z" fill="#E53935"/>
+  <!-- GIGABYTE text -->
+  <text x="125" y="56" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#1565C0" text-anchor="middle" letter-spacing="1">GIGABYTE</text>
+</svg>
