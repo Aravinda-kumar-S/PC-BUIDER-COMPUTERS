@@ -19,7 +19,8 @@ import {
   Menu,
   X,
   Send,
-  Eye
+  Eye,
+  ExternalLink
 } from 'lucide-react';
 import GoogleReviews from './GoogleReviews';
 
@@ -170,7 +171,6 @@ export default function Home() {
     { img: '/gaming_pc.jpg', label: 'Gaming PC' },
     { img: '/editing_pc.jpg', label: 'Editing PC' },
     { img: '/workstation_pc.jpg', label: 'Workstation PC' },
-    { img: officeSetupImg, label: 'Office PC' },
   ];
 
   // Auto-scroll hero slides
@@ -221,6 +221,7 @@ export default function Home() {
 
   // Gallery Data (Recent Installations)
   const galleryItems = [
+    '/installations/IMG-20260624-WA0019.jpg',
     '/installations/IMG-20260624-WA0002.jpg',
     '/installations/IMG-20260624-WA0003.jpg',
     '/installations/IMG-20260624-WA0004.jpg',
@@ -501,6 +502,15 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               </a>
             </li>
             <li>
+              <Link
+                to="/bookkeeper"
+                className="nav-link nav-bookkeeper"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                BookKeeper
+              </Link>
+            </li>
+            <li>
               <a
                 href="#contact"
                 className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
@@ -533,133 +543,196 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
       {/* Hero Section */}
       <section id="home" className="hero-section">
-        <div className="container">
-          <div className="hero-grid">
-            <div className="hero-content">
-              <p className="hero-tag">PC BUILD IN MADURAI</p>
-              <h1 className="hero-title">
-                Build Your <span>Dream PC</span> Within Your Budget
-              </h1>
-              <p className="hero-subtitle">
-                <span className="hero-subtitle-highlight">
-                  Welcome to <span className="hero-subtitle-accent">PC BUILD IN MADURAI</span> — your expert assembled computer shop in the heart of Madurai, Tamilnadu.
-                </span>
-                We specialize in high-quality computer assembling, providing <span className="hero-subtitle-accent">custom PCs</span> tailored to meet individual needs. Whether for <span className="hero-subtitle-accent">gaming</span>, professional workstations, or general use, our skilled technicians combine top-tier components to construct reliable and high-performance systems.
-                <br /><br />
-                Our commitment to delivering unparalleled service ensures every computer we build not only meets but <span className="hero-subtitle-accent">exceeds client expectations</span>. Trust PC BUILD IN MADURAI for all your computing solutions.
-              </p>
 
-              <div className="hero-buttons">
-                <a href="#enquiry" className="btn-primary">
-                  Get Free Estimate <ChevronRight size={18} />
-                </a>
-                <a
-                  href="https://wa.me/918667864448"
-                  className="btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp Now
-                </a>
-              </div>
+        {/* ── Row 1: Centered heading + tagline ── */}
+        <div className="hero-header-block">
+          <p className="hero-tag">PC BUILD IN MADURAI</p>
+          <p className="hero-tag-sub">
+            Custom Gaming PCs &amp; Video Editing Workstations in Madurai&nbsp;
+            <span className="hero-tag-divider">|</span>&nbsp;
+            <span className="hero-tag-sub-brand">PCBUILDER COMPUTERS</span>
+          </p>
+        </div>
 
-              {/* Counters */}
-              <div className="counters-container">
-                <div className="counter-card glass-card">
-                  <div className="counter-num">{builtCount}+</div>
-                  <div className="counter-label">Custom PCs Built</div>
-                </div>
-                <div className="counter-card glass-card">
-                  <div className="counter-num">{businessCount}+</div>
-                  <div className="counter-label">Customers</div>
-                </div>
-                <div className="counter-card glass-card">
-                  <div className="counter-num">100%</div>
-                  <div className="counter-label">Customer Satisfaction</div>
-                </div>
-                <div className="counter-card glass-card">
-                  <div className="counter-num">FREE</div>
-                  <div className="counter-label">Installation</div>
-                </div>
-                <div className="counter-card glass-card">
-                  <div className="counter-num">FREE</div>
-                  <div className="counter-label">Delivery</div>
-                </div>
-                <div className="counter-card glass-card">
-                  <div className="counter-num">5.0</div>
-                  <div className="counter-label">Ratings</div>
-                </div>
-              </div>
+        {/* ── Row 2: Full-width photo slideshow ── */}
+        <div className="hero-photo-reel">
+          {heroSlides.map((slide, i) => (
+            <div
+              key={i}
+              className={`hero-photo-slide ${i === heroSlide ? 'active' : ''}`}
+            >
+              <img
+                src={slide.img}
+                alt={slide.label}
+                className="hero-photo-img"
+                draggable="false"
+              />
             </div>
-
-            <div className="hero-interactive">
-              <div className="hero-slideshow">
-                {heroSlides.map((slide, i) => (
-                  <div
-                    key={i}
-                    className={`hero-slide ${i === heroSlide ? 'active' : ''}`}
-                  >
-                    <img src={slide.img} alt={slide.label} className="hero-slide-img" />
-                    <div className="hero-slide-label">{slide.label}</div>
-                  </div>
-                ))}
-                <div className="hero-slide-dots">
-                  {heroSlides.map((_, i) => (
-                    <button
-                      key={i}
-                      className={`slide-dot ${i === heroSlide ? 'active' : ''}`}
-                      onClick={() => setHeroSlide(i)}
-                      aria-label={`Slide ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+          ))}
+          {/* Bottom overlay for dots & label */}
+          <div className="hero-photo-footer">
+            <span className="hero-photo-label">{heroSlides[heroSlide].label}</span>
+            <div className="hero-photo-dots">
+              {heroSlides.map((_, i) => (
+                <button
+                  key={i}
+                  className={`slide-dot ${i === heroSlide ? 'active' : ''}`}
+                  onClick={() => setHeroSlide(i)}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
+
+        {/* ── Row 3: Title + description content ── */}
+        <div className="hero-body container">
+          <h1 className="hero-title">
+            Build Your <span>Dream PC</span> Within Your Budget
+          </h1>
+
+          <div className="hero-body-text">
+            <p className="hero-body-para hero-body-intro">
+              Welcome to{' '}
+              <span className="hb-accent">PC BUILD IN MADURAI</span>
+              {' '}—{' '}your expert assembled computer shop in the heart of Madurai, Tamilnadu.
+            </p>
+            <p className="hero-body-para">
+              We specialize in high-quality computer assembling, providing{' '}
+              <span className="hb-accent">custom PCs</span>{' '}
+              tailored to meet individual needs. Whether for{' '}
+              <span className="hb-accent">gaming</span>,
+              professional workstations, or general use, our skilled technicians combine
+              top-tier components to construct reliable and high-performance systems.
+            </p>
+            <p className="hero-body-para">
+              Our commitment to delivering unparalleled service ensures every computer we build
+              not only meets but{' '}
+              <span className="hb-highlight">exceeds client expectations</span>.
+              Trust PC BUILD IN MADURAI for all your computing solutions.
+            </p>
+          </div>
+
+          <div className="hero-buttons">
+            <a href="#enquiry" className="btn-primary">
+              Get Free Estimate <ChevronRight size={18} />
+            </a>
+            <a
+              href="https://wa.me/918667864448"
+              className="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp Now
+            </a>
+            <a href="tel:8667864448" className="btn-call">
+              <Phone size={16} />
+              Call Now
+            </a>
+          </div>
+
+          {/* Counters */}
+          <div className="counters-container">
+            <div className="counter-card glass-card">
+              <div className="counter-num">{builtCount}+</div>
+              <div className="counter-label">Custom PCs Built</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">{businessCount}+</div>
+              <div className="counter-label">Customers</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">100%</div>
+              <div className="counter-label">Customer Satisfaction</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">FREE</div>
+              <div className="counter-label">Delivery</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">FREE</div>
+              <div className="counter-label">Installation</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">24x7</div>
+              <div className="counter-label">Customer Support</div>
+            </div>
+            <div className="counter-card glass-card">
+              <div className="counter-num">5.0</div>
+              <div className="counter-label">⭐ Ratings</div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* About Section */}
       <section id="about" className="about-section">
         <div className="container">
-          <h2 className="section-title">Your Gaming & Editing PC Destination</h2>
+
+          {/* ── Section heading ── */}
+          <h2 className="section-title">Your Gaming &amp; Editing PC Destination</h2>
+
           <div className="about-grid">
+
+            {/* ── LEFT CARD ── */}
             <div className="about-card glass-card">
-              <h3 className="about-tag">PCBUILDER Computers</h3>
-              <p className="about-desc">
-                PCBUILDER Computers is Madurai's trusted premium custom PC builder specializing in high-performance hardware configs. We craft industry-leading Gaming PCs, 4K Video Editing Workstations, Office Desktop Systems, Educational Computers, and high-compute Enterprise Solutions.
-              </p>
-              <p className="about-desc">
-                Every rig we build is meticulously assembled with premium, hand-picked brand components, stress-tested for thermal performance, and professionally cable-managed before dispatch.
+              <h3 className="about-card-heading">PCBUILDER COMPUTERS</h3>
+              <p className="about-card-sub">Custom High-Performance Systems</p>
+
+              <p className="about-body-text">
+                Welcome to <span className="txt-green">PCBUILDER COMPUTERS</span>, Madurai's trusted
+                destination for custom-built <span className="txt-green">Gaming PCs</span>,{' '}
+                <span className="txt-green">Video Editing Workstations</span>,{' '}
+                <span className="txt-green">Office Computers</span>, and{' '}
+                <span className="txt-green">Enterprise Systems</span>. We specialize in designing
+                and assembling high-performance computers tailored to your exact requirements and budget.
               </p>
 
+              <p className="about-body-text">
+                Using the latest <span className="txt-green">Intel® Core™</span>,{' '}
+                <span className="txt-green">AMD Ryzen™</span>, and{' '}
+                <span className="txt-green">NVIDIA® GeForce RTX™</span> hardware, every PC is
+                built with genuine premium components, professionally cable-managed, and thoroughly
+                stress-tested to ensure exceptional performance, reliability, and long-term durability.
+              </p>
             </div>
 
+            {/* ── RIGHT CARD ── */}
             <div className="about-card glass-card">
-              <h3 className="about-tag" style={{ color: 'var(--electric-blue)' }}>Expert Engineering</h3>
-              <p className="about-desc" style={{ marginBottom: '32px' }}>
-                We believe a computer isn't just parts inside a box — it is an extension of your creative and competitive self. Our systems are optimized to run silent, cool, and extract the absolute maximum FPS and render speed from your budget.
+              <h3 className="about-card-heading about-card-heading--blue">
+                Expert PC Engineering &amp; Assembly
+              </h3>
+
+              <p className="about-body-text">
+                A custom PC is more than just hardware — it's the foundation of your gaming, content
+                creation, and professional workflow. Our expert-built systems are engineered for{' '}
+                <span className="txt-blue">maximum cooling</span>, quieter operation,{' '}
+                <span className="txt-blue">higher FPS</span>, and{' '}
+                <span className="txt-blue">faster rendering performance</span> while maintaining
+                outstanding stability.
               </p>
 
-              <div className="about-features">
-                <div className="about-feat">
-                  <Check size={18} className="glow-text-green" style={{ color: 'var(--neon-green)' }} />
-                  <span>Premium Cable Management</span>
-                </div>
-                <div className="about-feat">
-                  <Check size={18} className="glow-text-green" style={{ color: 'var(--neon-green)' }} />
-                  <span>24-Hour Stress Testing</span>
-                </div>
-                <div className="about-feat">
-                  <Check size={18} className="glow-text-green" style={{ color: 'var(--neon-green)' }} />
-                  <span>Official Component Warranties</span>
-                </div>
-                <div className="about-feat">
-                  <Check size={18} className="glow-text-green" style={{ color: 'var(--neon-green)' }} />
-                  <span>Lifetime Tech Support</span>
-                </div>
-              </div>
+              <p className="about-quality-heading">Our Commitment to Quality</p>
+
+              <ul className="about-checklist">
+                {[
+                  'Professional Cable Management for improved airflow and a clean finish.',
+                  'Benchmark, Thermal & Hardware Stress Testing for maximum stability.',
+                  'Plug-and-Play Windows Installation, Driver Setup & BIOS Optimization.',
+                  'XMP/EXPO Memory Configuration for peak RAM performance.',
+                  'Safe CPU & GPU Performance Tuning using premium thermal solutions.',
+                  'Genuine Components with Official Manufacturer Warranties.',
+                  'Lifetime Technical Support and expert after-sales assistance.',
+                ].map((item, i) => (
+                  <li className="about-checklist-item" key={i}>
+                    <Check size={16} style={{ color: 'var(--neon-green)', flexShrink: 0, marginTop: '2px' }} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+
           </div>
         </div>
       </section>
@@ -670,39 +743,39 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
           <h2 className="section-title">Our Services</h2>
           <div className="why-grid">
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Sliders size={24} /></div>
+              <div className="why-icon-container"><Sliders size={28} /></div>
               <h3 className="why-title">Customization PC Build</h3>
               <p className="why-desc">Fully custom-configured PCs built to your exact specs, budget, and use case — every component hand-picked for maximum performance.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Monitor size={24} /></div>
+              <div className="why-icon-container"><Monitor size={28} /></div>
               <h3 className="why-title">Gaming PC</h3>
               <p className="why-desc">High-FPS gaming rigs with the latest Intel/AMD processors and NVIDIA/AMD GPUs, optimized for the smoothest gameplay experience.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Grid size={24} /></div>
+              <div className="why-icon-container"><Grid size={28} /></div>
               <h3 className="why-title">Editing PC</h3>
-              <p className="why-desc">4K/8K video editing workstations and photo editing powerhouses with fast NVMe storage, high RAM, and color-accurate display support.</p>
+              <p className="why-desc">4K/8K video editing workstations and photo editing powerhouses with fast NVMe storage, High Speed DDR5 &amp; DDR4 RAM, and color-accurate display support.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Cpu size={24} /></div>
+              <div className="why-icon-container"><Cpu size={28} /></div>
               <h3 className="why-title">Desktop Computer</h3>
               <p className="why-desc">Reliable office and home desktop systems built for productivity, accounting, billing, and everyday computing needs.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Smartphone size={24} /></div>
+              <div className="why-icon-container"><Smartphone size={28} /></div>
               <h3 className="why-title">Gaming Laptop</h3>
               <p className="why-desc">Top gaming laptop brands sourced and supplied with expert advice on best-fit models for your gaming or work requirements.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><Wrench size={24} /></div>
+              <div className="why-icon-container"><Wrench size={28} /></div>
               <h3 className="why-title">Deep Cleaning & Upgrade</h3>
-              <p className="why-desc">Professional deep cleaning, thermal paste replacement, RAM/SSD upgrades, and performance tuning for your existing system.</p>
+              <p className="why-desc">Professional deep cleaning, thermal paste replacement, RAM / SSD / GPU upgrades, OS / BIOS Upgrade and performance tuning for your existing system.</p>
             </div>
             <div className="why-card glass-card">
-              <div className="why-icon-container"><ShieldCheck size={24} /></div>
+              <div className="why-icon-container"><ShieldCheck size={28} /></div>
               <h3 className="why-title">Repair Services & More</h3>
-              <p className="why-desc">Hardware diagnostics, motherboard repair, power supply replacement, OS installation, and full system troubleshooting.</p>
+              <p className="why-desc">Hardware diagnostics, motherboard repair, power supply replacement, OS installation, BSOD Error Rectifying and full system troubleshooting.</p>
             </div>
           </div>
         </div>
@@ -763,7 +836,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     onChange={(e) => setEnquiry({ ...enquiry, budget: e.target.value })}
                   />
                 </div>
-                <div className="form-group" style={{ gridColumn: 'span 2' }}>
+                <div className="form-group form-full">
                   <label htmlFor="usage">Primary Usage</label>
                   <select
                     id="usage"
@@ -772,9 +845,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     onChange={(e) => setEnquiry({ ...enquiry, usage: e.target.value })}
                   >
                     <option value="Gaming PC">Gaming PC</option>
+                    <option value="4K Gaming">4K Gaming</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
                     <option value="Animation">Animation</option>
+                    <option value="AI Development">AI Development</option>
+                    <option value="Architecture / Builder Work">Architecture / Builder Work</option>
                     <option value="Office Work">Office Work</option>
                     <option value="POS Billing">POS Billing</option>
                     <option value="Accounting">Accounting</option>
@@ -790,7 +866,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   </select>
                 </div>
 
-                <div className="form-group" style={{ gridColumn: 'span 2' }}>
+                <div className="form-group form-full">
                   <label htmlFor="secondaryUsage">Secondary Usage <span style={{ color: 'var(--text-secondary)', fontWeight: 400, fontSize: '0.8rem' }}>(Optional)</span></label>
                   <select
                     id="secondaryUsage"
@@ -800,9 +876,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   >
                     <option value="">-- Select Secondary Usage --</option>
                     <option value="Gaming PC">Gaming PC</option>
+                    <option value="4K Gaming">4K Gaming</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
                     <option value="Animation">Animation</option>
+                    <option value="AI Development">AI Development</option>
+                    <option value="Architecture / Builder Work">Architecture / Builder Work</option>
                     <option value="Office Work">Office Work</option>
                     <option value="POS Billing">POS Billing</option>
                     <option value="Accounting">Accounting</option>
@@ -877,18 +956,19 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         <h2 className="section-title" style={{ textAlign: 'center', paddingTop: '2rem', marginBottom: '1.5rem' }}>We Dealing With</h2>
         <div className="marquee-track">
           {[
-            { name: 'MSI', file: '/logos/msi.svg' },
-            { name: 'ASUS', file: '/logos/asus.svg' },
-            { name: 'GIGABYTE', file: '/logos/gigabyte.svg' },
-            { name: 'AMD', file: '/logos/amd.svg' },
-            { name: 'INTEL', file: '/logos/intel.svg' },
-            { name: 'ASROCK', file: '/logos/asrock.svg' },
-            { name: 'COOLER MASTER', file: '/logos/coolermaster.svg' },
-            { name: 'THERMALTAKE', file: '/logos/thermaltake.svg' },
-            { name: 'ANT ESPORTS', file: '/logos/antesports.svg' },
-            { name: 'ANTEC', file: '/logos/antec.svg' },
-            { name: 'DEEPCOOL', file: '/logos/deepcool.svg' },
-            { name: 'CP PLUS', file: '/logos/cpplus.svg' },
+            { name: 'MSI',           file: '/logos/msi-new.png' },
+            { name: 'ASUS',          file: '/logos/asus-new.png' },
+            { name: 'GIGABYTE',      file: '/logos/gigabyte-new.png' },
+            { name: 'AMD',           file: '/logos/amd-new.png' },
+            { name: 'INTEL',         file: '/logos/intel-new.png' },
+            { name: 'NVIDIA',        file: '/logos/nvidia.png' },
+            { name: 'ASROCK',        file: '/logos/asrock-new.png' },
+            { name: 'COOLER MASTER', file: '/logos/coolermaster-new.png' },
+            { name: 'THERMALTAKE',   file: '/logos/thermaltake-new.png' },
+            { name: 'ANT ESPORTS',   file: '/logos/antesports-new.png' },
+            { name: 'ANTEC',         file: '/logos/antec-new.png' },
+            { name: 'DEEPCOOL',      file: '/logos/deepcool-new.png' },
+            { name: 'CP PLUS',       file: '/logos/cpplus-new.jpg' },
           ].map((brand, i) => (
             <div key={i} className="marquee-logo-card">
               <div className="marquee-logo-img-wrap">
@@ -898,18 +978,19 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
           ))}
           {/* Duplicate for seamless infinite loop */}
           {[
-            { name: 'MSI', file: '/logos/msi.svg' },
-            { name: 'ASUS', file: '/logos/asus.svg' },
-            { name: 'GIGABYTE', file: '/logos/gigabyte.svg' },
-            { name: 'AMD', file: '/logos/amd.svg' },
-            { name: 'INTEL', file: '/logos/intel.svg' },
-            { name: 'ASROCK', file: '/logos/asrock.svg' },
-            { name: 'COOLER MASTER', file: '/logos/coolermaster.svg' },
-            { name: 'THERMALTAKE', file: '/logos/thermaltake.svg' },
-            { name: 'ANT ESPORTS', file: '/logos/antesports.svg' },
-            { name: 'ANTEC', file: '/logos/antec.svg' },
-            { name: 'DEEPCOOL', file: '/logos/deepcool.svg' },
-            { name: 'CP PLUS', file: '/logos/cpplus.svg' },
+            { name: 'MSI',           file: '/logos/msi-new.png' },
+            { name: 'ASUS',          file: '/logos/asus-new.png' },
+            { name: 'GIGABYTE',      file: '/logos/gigabyte-new.png' },
+            { name: 'AMD',           file: '/logos/amd-new.png' },
+            { name: 'INTEL',         file: '/logos/intel-new.png' },
+            { name: 'NVIDIA',        file: '/logos/nvidia.png' },
+            { name: 'ASROCK',        file: '/logos/asrock-new.png' },
+            { name: 'COOLER MASTER', file: '/logos/coolermaster-new.png' },
+            { name: 'THERMALTAKE',   file: '/logos/thermaltake-new.png' },
+            { name: 'ANT ESPORTS',   file: '/logos/antesports-new.png' },
+            { name: 'ANTEC',         file: '/logos/antec-new.png' },
+            { name: 'DEEPCOOL',      file: '/logos/deepcool-new.png' },
+            { name: 'CP PLUS',       file: '/logos/cpplus-new.jpg' },
           ].map((brand, i) => (
             <div key={`dup-${i}`} className="marquee-logo-card">
               <div className="marquee-logo-img-wrap">
@@ -917,6 +998,90 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* BookKeeper Authorized Partner Section */}
+      <section className="bk-home-section">
+        <div className="container">
+          <div className="bk-home-badge">We Authorized Sales Partner</div>
+
+          {/* BookKeeper official logo image */}
+          <div className="bk-home-logo-wrap">
+            <img
+              src="/bookkeeper-logo.png"
+              alt="BookKeeper Accounting Software"
+              className="bk-home-logo-img"
+            />
+          </div>
+
+          {/* Product screenshot */}
+          <div className="bk-home-product-wrap">
+            <img
+              src="/bookkeeper-product.jpg"
+              alt="BookKeeper – Now in 30+ Countries"
+              className="bk-home-product-img"
+            />
+          </div>
+          <p className="bk-home-pills">
+            <span className="bk-pill">GST Billing</span>
+            <span className="bk-pill-dot">•</span>
+            <span className="bk-pill">Accounting</span>
+            <span className="bk-pill-dot">•</span>
+            <span className="bk-pill">Inventory Management</span>
+          </p>
+          <p className="bk-home-desc">
+            Manage your business smarter with <span className="bk-accent">BookKeeper</span>, India's
+            trusted accounting software for retail shops, wholesalers, manufacturers, service
+            providers, medical stores, startups, and SMEs. As an{' '}
+            <span className="bk-accent">Authorized Sales Partner in Tamil Nadu</span>, we provide
+            genuine licenses, installation, setup, training, and full technical support.
+          </p>
+
+          <div className="bk-home-grid">
+            {/* Features */}
+            <div className="bk-home-card glass-card">
+              <h3 className="bk-home-card-title">Key Features</h3>
+              <ul className="bk-home-list">
+                {['GST Billing & Tax Reports','Business Accounting','Inventory Management',
+                  'Purchase & Sales Tracking','Financial Reports','Barcode Billing',
+                  'Multi-Company Support','Secure Data Backup'].map((f,i) => (
+                  <li key={i}><Check size={14} style={{color:'var(--neon-green)',flexShrink:0}}/><span>{f}</span></li>
+                ))}
+              </ul>
+            </div>
+            {/* Why Us */}
+            <div className="bk-home-card glass-card">
+              <h3 className="bk-home-card-title bk-home-card-title--blue">Why Choose Us?</h3>
+              <ul className="bk-home-list">
+                {['Genuine BookKeeper License','Professional Installation',
+                  'GST Setup & Data Migration','User Training',
+                  'Technical Support & Renewal Assistance'].map((w,i) => (
+                  <li key={i}><Check size={14} style={{color:'var(--neon-green)',flexShrink:0}}/><span>{w}</span></li>
+                ))}
+              </ul>
+              <h4 className="bk-home-perfect-label">Perfect For</h4>
+              <div className="bk-home-tags">
+                {['Retail','Wholesale','Manufacturing','Medical','Supermarket',
+                  'Restaurant','Textile','Service Businesses','CA / SMEs'].map((t,i) => (
+                  <span key={i} className="bk-home-tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="bk-home-cta">
+            <p className="bk-home-cta-text">Ready to Simplify Your Business?</p>
+            <div className="bk-home-cta-btns">
+              <Link to="/bookkeeper" className="bk-btn-primary">
+                Learn More <ExternalLink size={16} />
+              </Link>
+              <a href="tel:+918667864448" className="bk-btn-primary bk-btn-call">
+                <Phone size={16} />
+                Book Now — +91 8667864448
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -987,7 +1152,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
           <div className="contact-grid">
             <div className="contact-info glass-card" style={{ padding: '40px' }}>
               <div className="contact-header">
-                <h3 className="contact-title">PCBUILDER Computers</h3>
+                <h3 className="contact-title" style={{ color: 'var(--neon-green)' }}>PCBUILDER Computers</h3>
                 <p className="contact-desc">
                   Visit our physical experience store in Madurai, or reach out to our team of custom building experts today.
                 </p>
@@ -1000,10 +1165,10 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   </div>
                   <div className="contact-item-details">
                     <h4>Address</h4>
-                    <p>Ground Floor, KTR Complex, 229-230,</p>
-                    <p>E Veli St, near HDFC Bank,</p>
-                    <p>Nelpettai, Madurai Main,</p>
-                    <p>Madurai, Tamil Nadu 625001</p>
+                    <p>KTR Complex, 229-230, E Veli St,</p>
+                    <p>near HDFC Bank, Nelpettai,</p>
+                    <p>Madurai Main, Madurai,</p>
+                    <p>Tamil Nadu 625001</p>
                   </div>
                 </div>
 
@@ -1033,7 +1198,8 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   </div>
                   <div className="contact-item-details">
                     <h4>Store Hours</h4>
-                    <p>Monday – Sunday: 9:00 AM to 10:00 PM</p>
+                    <p>Monday – Saturday: 9:00 AM to 10:00 PM</p>
+                    <p>Sunday: 9:00 AM to 3:00 PM</p>
                   </div>
                 </div>
               </div>
