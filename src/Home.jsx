@@ -1006,37 +1006,22 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         <div className="container">
           <div className="bk-home-badge">We Authorized Sales Partner</div>
 
-          {/* BookKeeper logo — inline SVG (no external file needed) */}
+          {/* BookKeeper official logo image */}
           <div className="bk-home-logo-wrap">
-            <div className="bk-inline-logo">
-              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="26" cy="26" r="26" fill="#1a5c38"/>
-                <text x="26" y="33" textAnchor="middle" fill="white" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold">bk</text>
-              </svg>
-              <span className="bk-inline-logo-text">BookKeeper<sup className="bk-inline-logo-reg">®</sup></span>
-            </div>
+            <img
+              src="/bookkeeper-logo.png"
+              alt="BookKeeper Accounting Software"
+              className="bk-home-logo-img"
+            />
           </div>
 
-          {/* Product info card instead of missing screenshot */}
+          {/* Product screenshot */}
           <div className="bk-home-product-wrap">
-            <div className="bk-product-banner">
-              <div className="bk-product-banner-left">
-                <div className="bk-product-banner-badge">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#34A853" strokeWidth="2" strokeLinecap="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="#34A853" strokeWidth="2" strokeLinecap="round"/></svg>
-                  Google Play &nbsp;<span className="bk-product-stars">4.5 ★★★★½</span>
-                </div>
-                <p className="bk-product-banner-title">GST Billing &amp; Accounting</p>
-                <p className="bk-product-banner-sub">India's Trusted Business Software</p>
-              </div>
-              <div className="bk-product-banner-right">
-                <p className="bk-product-banner-countries">🌍 Now in 30+ Countries</p>
-                <div className="bk-product-features">
-                  {['GST Billing','Inventory','Accounting','Reports','Barcode'].map((f,i) => (
-                    <span key={i} className="bk-product-feat-pill">{f}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <img
+              src="/bookkeeper-product.jpg"
+              alt="BookKeeper – Now in 30+ Countries"
+              className="bk-home-product-img"
+            />
           </div>
           <p className="bk-home-pills">
             <span className="bk-pill">GST Billing</span>
