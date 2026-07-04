@@ -410,8 +410,8 @@ export default function BookKeeperPage() {
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">Business Hours</h4>
-                  <p>Monday – Saturday: 9:00 AM to 7:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Monday – Saturday: 9:00 AM to 10:00 PM</p>
+                  <p>Sunday: 9:00 AM to 3:00 PM</p>
                 </div>
               </div>
 
