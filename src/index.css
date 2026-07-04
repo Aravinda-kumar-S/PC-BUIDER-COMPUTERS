@@ -3540,3 +3540,136 @@ img, video, iframe, canvas, svg {
   transition: color 0.2s;
 }
 .bkp-contact-link:hover { color: var(--neon-green); }
+
+/* ── BookKeeper inline logo (no external image) ── */
+.bk-inline-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  padding: 12px 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 28px rgba(0,0,0,0.4);
+}
+
+.bk-inline-logo--large {
+  padding: 16px 36px;
+}
+
+.bk-inline-logo-text {
+  font-family: 'Georgia', serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #111;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.bk-inline-logo-reg {
+  font-size: 0.5em;
+  vertical-align: super;
+  color: #555;
+}
+
+/* ── Product info banner (replaces missing screenshot) ── */
+.bk-product-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: linear-gradient(135deg,
+    rgba(26,92,56,0.18) 0%,
+    rgba(0,200,255,0.06) 100%);
+  border: 1px solid rgba(26,92,56,0.4);
+  border-radius: 18px;
+  padding: clamp(24px, 3vw, 44px);
+  width: 100%;
+}
+
+.bk-product-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.bk-product-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-rajdhani);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  background: rgba(52,168,83,0.12);
+  border: 1px solid rgba(52,168,83,0.3);
+  border-radius: 30px;
+  padding: 6px 14px;
+  width: fit-content;
+}
+
+.bk-product-stars {
+  color: #FBBC05;
+  font-weight: 700;
+}
+
+.bk-product-banner-title {
+  font-family: var(--font-orbitron);
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.bk-product-banner-sub {
+  font-family: var(--font-rajdhani);
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+}
+
+.bk-product-banner-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .bk-product-banner-right { align-items: flex-start; }
+}
+
+.bk-product-banner-countries {
+  font-family: var(--font-orbitron);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neon-green);
+  text-shadow: 0 0 10px rgba(141,255,0,0.3);
+  margin: 0;
+}
+
+.bk-product-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 640px) {
+  .bk-product-features { justify-content: flex-start; }
+}
+
+.bk-product-feat-pill {
+  font-family: var(--font-rajdhani);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  background: rgba(0,200,255,0.08);
+  border: 1px solid rgba(0,200,255,0.2);
+  border-radius: 20px;
+  padding: 4px 12px;
+  white-space: nowrap;
+}
