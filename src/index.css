@@ -386,19 +386,26 @@ a {
 
 .hamburger {
   display: none;
-  flex-direction: column;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   background: transparent;
   border: none;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 101;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hamburger span {
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hamburger svg {
   display: block;
-  width: 25px;
-  height: 2px;
-  background: var(--text-primary);
-  transition: all 0.3s ease;
+  color: #ffffff;
+  stroke: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -415,6 +422,7 @@ a {
     gap: 24px;
     transition: right 0.3s ease-in-out;
     border-left: 1px solid var(--dark-border);
+    z-index: 100;
   }
   .nav-menu.open {
     right: 0;
