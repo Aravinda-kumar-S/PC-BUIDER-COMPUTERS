@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, Phone, ChevronRight, ArrowRight } from 'lucide-react';
 import pcBuilderLogo from './assets/PCBUILDER.png';
+import bkLogo from '/bookkeeper-logo.png';
+import bkProduct from '/bookkeeper-product.jpg';
 
 const WHATSAPP_NUMBER = '918807621978';
 
@@ -106,17 +108,9 @@ export default function BookKeeperPage() {
       <section className="bkp-hero">
         <div className="bkp-hero-badge">We Authorized Sales Partner</div>
 
-        {/* BookKeeper logo — inline SVG (no external file dependency) */}
+        {/* BookKeeper official logo */}
         <div className="bkp-logo-wrap">
-          <div className="bk-inline-logo bk-inline-logo--large">
-            <svg width="64" height="64" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="26" cy="26" r="26" fill="#1a5c38"/>
-              <text x="26" y="34" textAnchor="middle" fill="white" fontFamily="Georgia, serif" fontSize="22" fontWeight="bold">bk</text>
-            </svg>
-            <span className="bk-inline-logo-text">
-              BookKeeper<sup className="bk-inline-logo-reg">®</sup>
-            </span>
-          </div>
+          <img src={bkLogo} alt="BookKeeper Official Logo" className="bkp-official-logo" />
         </div>
 
         <h1 className="bkp-hero-h1">BookKeeper Accounting Software</h1>
@@ -125,29 +119,9 @@ export default function BookKeeperPage() {
           Smart GST Billing, Accounting &amp; Inventory Management Software for Every Business
         </p>
 
-        {/* Product info banner — replaces missing screenshot */}
+        {/* BookKeeper official product image */}
         <div className="bkp-product-wrap">
-          <div className="bk-product-banner">
-            <div className="bk-product-banner-left">
-              <div className="bk-product-banner-badge">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#34A853" strokeWidth="2" strokeLinecap="round"/>
-                  <polyline points="9 22 9 12 15 12 15 22" stroke="#34A853" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-                Google Play &nbsp;<span className="bk-product-stars">4.5 ★★★★½</span>
-              </div>
-              <p className="bk-product-banner-title">GST Billing &amp; Accounting Software</p>
-              <p className="bk-product-banner-sub">India's Most Trusted Business Management Solution</p>
-            </div>
-            <div className="bk-product-banner-right">
-              <p className="bk-product-banner-countries">🌍 Now in 30+ Countries</p>
-              <div className="bk-product-features">
-                {['GST Billing','Inventory','Accounting','Financial Reports','Barcode Billing','Multi-Company'].map((f,i) => (
-                  <span key={i} className="bk-product-feat-pill">{f}</span>
-                ))}
-              </div>
-            </div>
-          </div>
+          <img src={bkProduct} alt="BookKeeper Accounting Software" className="bkp-product-img" />
         </div>
 
         <p className="bkp-hero-desc">
