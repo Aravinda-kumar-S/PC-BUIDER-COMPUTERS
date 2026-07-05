@@ -266,7 +266,7 @@ export default function GoogleReviews() {
           </a>
 
           <a
-            href="https://g.page/r/CbQf-vqo1NSeEB0/review"
+            href="https://g.page/r/CbQf-vqo0NSeEAg/review"
             target="_blank"
             rel="noopener noreferrer"
             className="reviews-write-btn"
