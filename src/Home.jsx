@@ -161,6 +161,87 @@ function drawWireframeCube(ctx, width, height, angleX, angleY, scale, mouseX, mo
   ctx.restore();
 }
 
+// Infinite auto-scrolling gallery marquee using requestAnimationFrame
+function GalleryMarquee({ items, onImageClick }) {
+  const trackRef = useRef(null);
+  const rafRef = useRef(null);
+  const offsetRef = useRef(0);
+  const isPausedRef = useRef(false);
+  const speed = 0.6; // px per frame — adjust for faster/slower
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const animate = () => {
+      if (!isPausedRef.current) {
+        offsetRef.current += speed;
+        // Half-width reset: when we've scrolled through one full copy, snap back
+        const halfWidth = track.scrollWidth / 2;
+        if (offsetRef.current >= halfWidth) {
+          offsetRef.current = 0;
+        }
+        track.style.transform = `translateX(-${offsetRef.current}px)`;
+      }
+      rafRef.current = requestAnimationFrame(animate);
+    };
+
+    rafRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  const cardStyle = { position: 'relative' };
+  const labelStyle = {
+    position: 'absolute',
+    bottom: '10px',
+    left: '10px',
+    right: '10px',
+    background: 'rgba(0,0,0,0.7)',
+    color: '#fff',
+    padding: '5px 10px',
+    borderRadius: '5px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    fontSize: '0.9rem',
+    backdropFilter: 'blur(5px)',
+  };
+
+  // Render two copies for seamless looping
+  const renderCards = (keyPrefix) =>
+    items.map((item, index) => (
+      <div
+        key={`${keyPrefix}-${index}`}
+        className="gallery-card glass-card"
+        onClick={() => onImageClick(item.src)}
+        onMouseEnter={() => { isPausedRef.current = true; }}
+        onMouseLeave={() => { isPausedRef.current = false; }}
+        style={cardStyle}
+      >
+        <div className="gallery-img-container">
+          <img src={item.src} alt={`Installation at ${item.location}`} className="gallery-img" loading="lazy" />
+        </div>
+        <div style={labelStyle}>
+          <MapPin size={14} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-bottom' }} />
+          {item.location}
+        </div>
+      </div>
+    ));
+
+  return (
+    <div
+      style={{ overflow: 'hidden', padding: '20px 4px 30px 4px', width: '100%' }}
+    >
+      <div
+        ref={trackRef}
+        style={{ display: 'flex', width: 'max-content', gap: '20px', willChange: 'transform' }}
+      >
+        {renderCards('a')}
+        {renderCards('b')}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -948,41 +1029,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
           <h2 className="section-title">Our Recent Installations</h2>
 
-          <div className="gallery-marquee-wrapper" style={{ overflow: 'hidden', padding: '20px 4px 30px 4px', width: '100%' }}>
-            <div className="gallery-marquee-track">
-              {galleryItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="gallery-card glass-card"
-                  onClick={() => setLightboxImg(item.src)}
-                  style={{ position: 'relative' }}
-                >
-                  <div className="gallery-img-container">
-                    <img src={item.src} alt={`Installation ${index + 1}`} className="gallery-img" loading="lazy" />
-                  </div>
-                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '5px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
-                    <MapPin size={14} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-bottom' }} /> {item.location}
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate for infinite auto-scroll */}
-              {galleryItems.map((item, index) => (
-                <div
-                  key={`dup-${index}`}
-                  className="gallery-card glass-card"
-                  onClick={() => setLightboxImg(item.src)}
-                  style={{ position: 'relative' }}
-                >
-                  <div className="gallery-img-container">
-                    <img src={item.src} alt={`Installation Duplicate ${index + 1}`} className="gallery-img" loading="lazy" />
-                  </div>
-                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '5px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
-                    <MapPin size={14} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-bottom' }} /> {item.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <GalleryMarquee items={galleryItems} onImageClick={setLightboxImg} />
 
           <div className="submit-container" style={{ marginTop: '2rem', textAlign: 'center' }}>
             <Link to="/gallery" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>

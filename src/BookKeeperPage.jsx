@@ -5,7 +5,7 @@ import pcBuilderLogo from './assets/PCBUILDER.png';
 import bkLogo from '/bookkeeper-logo.png';
 import bkProduct from '/bookkeeper-product.jpg';
 
-const WHATSAPP_NUMBER = '918807621978';
+const WHATSAPP_NUMBER = '+918667864448';
 
 const benefits = [
   'GST-Compliant Billing', 'Easy Accounting Management', 'Smart Inventory Control',
@@ -77,7 +77,7 @@ export default function BookKeeperPage() {
     <div className="bk-page">
 
       {/* ── Floating Action Buttons ── */}
-      <a href="tel:+918807621978" className="bkp-fab bkp-fab-call" aria-label="Call BookKeeper Support">
+      <a href="tel:+918667864448" className="bkp-fab bkp-fab-call" aria-label="Call BookKeeper Support">
         <Phone size={22} />
       </a>
       <a
@@ -386,7 +386,7 @@ export default function BookKeeperPage() {
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">Phone Number</h4>
-                  <p><a href="tel:+918807621978" className="bkp-contact-link">+91 88076 21978</a></p>
+                  <p><a href="tel:+918667864448" className="bkp-contact-link">+91 8667864448</a></p>
                 </div>
               </div>
 
@@ -398,7 +398,7 @@ export default function BookKeeperPage() {
                   <h4 className="bkp-contact-h4">WhatsApp</h4>
                   <p>
                     <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bkp-contact-link">
-                      +91 88076 21978
+                    +91 8667864448
                     </a>
                   </p>
                 </div>
