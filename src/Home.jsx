@@ -169,10 +169,10 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   const heroSlides = [
-    { img: '/desktop_pc.jpg', label: 'Desktop PC' },
-    { img: '/gaming_pc.jpg', label: 'Gaming PC' },
-    { img: '/editing_pc.jpg', label: 'Editing PC' },
-    { img: '/workstation_pc.jpg', label: 'Workstation PC' },
+    { img: '/desktop pc.png', label: 'Desktop PC' },
+    { img: '/gaming pc.png', label: 'Gaming PC' },
+    { img: '/editing pc.png', label: 'Editing PC' },
+    { img: '/workstation pc.png', label: 'Workstation PC' },
   ];
 
   // Auto-scroll hero slides
@@ -223,19 +223,19 @@ export default function Home() {
 
   // Gallery Data (Recent Installations)
   const galleryItems = [
-    '/installations/IMG-20260624-WA0019.jpg',
-    '/installations/IMG-20260624-WA0002.jpg',
-    '/installations/IMG-20260624-WA0003.jpg',
-    '/installations/IMG-20260624-WA0004.jpg',
-    '/installations/IMG-20260624-WA0005.jpg',
-    '/installations/IMG-20260624-WA0006.jpg',
-    '/installations/IMG-20260624-WA0007.jpg',
-    '/installations/IMG-20260624-WA0008.jpg',
-    '/installations/IMG-20260624-WA0010.jpg',
-    '/installations/IMG-20260624-WA0011.jpg',
-    '/installations/IMG-20260624-WA0012.jpg',
-    '/installations/IMG-20260624-WA0015.jpg',
-    '/installations/IMG-20260624-WA0018.jpg',
+    { src: '/installations/IMG-20260624-WA0019.jpg', location: 'Srivilliputhur' },
+    { src: '/installations/IMG-20260624-WA0002.jpg', location: 'Ottansathiram' },
+    { src: '/installations/IMG-20260624-WA0003.jpg', location: 'Thiruparankundram' },
+    { src: '/installations/IMG-20260624-WA0004.jpg', location: 'Thirumangalam' },
+    { src: '/installations/IMG-20260624-WA0005.jpg', location: 'Thoppur' },
+    { src: '/installations/IMG-20260624-WA0006.jpg', location: 'Sivagiri' },
+    { src: '/installations/IMG-20260624-WA0007.jpg', location: 'Madurai' },
+    { src: '/installations/IMG-20260624-WA0008.jpg', location: 'Madurai' },
+    { src: '/installations/IMG-20260624-WA0010.jpg', location: 'Karaikudi' },
+    { src: '/installations/IMG-20260624-WA0011.jpg', location: 'Cumbum' },
+    { src: '/installations/IMG-20260624-WA0012.jpg', location: 'Natham' },
+    { src: '/installations/IMG-20260624-WA0015.jpg', location: 'Madurai' },
+    { src: '/installations/IMG-20260624-WA0018.jpg', location: 'Madurai' },
   ];
 
   // Refs for canvas and mouse
@@ -597,21 +597,21 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <p className="hero-body-para hero-body-intro">
               Welcome to{' '}
               <span className="hb-accent">PCBUILDER COMPUTERS</span>
-              {' '}—{' '}your expert assembled computer shop in the heart of Madurai, Tamilnadu.
+              , your expert assembled computer shop located in the heart of Madurai, Tamilnadu.
             </p>
             <p className="hero-body-para">
               We specialize in high-quality <span className="hb-accent">computer assembling</span>, providing{' '}
               <span className="hb-accent">custom PCs</span>{' '}
-              tailored to meet individual needs. Whether for{' '}
+              tailored to meet our client's individual needs. Whether for{' '}
               <span className="hb-accent">gaming</span>,
               professional <span className="hb-accent">workstations</span>, or general use, our skilled technicians combine{' '}
               <span className="hb-accent">top-tier components</span> to construct reliable and <span className="hb-accent">high-performance</span> systems.
             </p>
             <p className="hero-body-para">
-              Our commitment to delivering unparalleled service ensures every computer we build
+              Our commitment to delivering unparalleled service and value ensures that every computer we build
               not only meets but{' '}
               <span className="hb-highlight">exceeds client expectations</span>.
-              Trust PC BUILD IN MADURAI for all your <span className="hb-accent">computing solutions</span>.
+              Trust <span className="hb-accent">PCBUILDER COMPUTERS</span> for all your <span className="hb-accent">computing solutions</span>.
             </p>
           </div>
 
@@ -752,7 +752,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Sliders size={28} /></div>
               <h3 className="why-title">Customization PC Build</h3>
-              <p className="why-desc">Fully custom-configured PCs built to your exact specs, budget, and use case — every component hand-picked for maximum performance.</p>
+              <p className="why-desc">Fully custom-configured PCs built to your exact specs, budget and use case — every component hand-picked for maximum performance.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Monitor size={28} /></div>
@@ -762,7 +762,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Grid size={28} /></div>
               <h3 className="why-title">Editing PC</h3>
-              <p className="why-desc">4K/8K video editing workstations and photo editing powerhouses with fast NVMe storage, High Speed DDR5 &amp; DDR4 RAM, and color-accurate display support.</p>
+              <p className="why-desc">4K/8K video editing workstations and photo editing powerhouses with fast NVMe storage, High Speed DDR5/DDR4 RAM and color-accurate display support.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Cpu size={28} /></div>
@@ -777,7 +777,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Package size={28} /></div>
               <h3 className="why-title">Refurbished Laptop</h3>
-              <p className="why-desc">Premium refurbished laptops from trusted brands, professionally tested and quality-checked for reliable performance. Perfect for students, professionals, businesses, and everyday computing, backed by warranty and after-sales support.</p>
+              <p className="why-desc">Shop premium refurbished laptops from top brands. Professionally tested, warranty-backed & reliable. Perfect for students, business & everyday use.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Wrench size={28} /></div>
@@ -792,7 +792,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Laptop size={28} /></div>
               <h3 className="why-title">Laptop Services</h3>
-              <p className="why-desc">Expert laptop repair, upgrades, and maintenance for all major brands, including screen replacement, battery replacement, SSD &amp; RAM upgrades, software installation, virus removal, and performance optimization.</p>
+              <p className="why-desc">Top laptop repair & maintenance: Screen/battery replacements, SSD/RAM upgrades, virus removal & Laptop performance optimization for all brands.</p>
             </div>
           </div>
         </div>
@@ -863,7 +863,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   >
                     <option value="Gaming PC">Gaming PC</option>
                     <option value="4K Gaming">4K Gaming</option>
-                    <option value="4K video Editing">4K video Editing</option>
+                    <option value="4K Video Editing">4K Video Editing</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
                     <option value="Animation">Animation</option>
@@ -895,7 +895,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     <option value="">-- Select Secondary Usage --</option>
                     <option value="Gaming PC">Gaming PC</option>
                     <option value="4K Gaming">4K Gaming</option>
-                    <option value="4K video Editing">4K video Editing</option>
+                    <option value="4K Video Editing">4K Video Editing</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
                     <option value="Animation">Animation</option>
@@ -935,12 +935,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
           <div className="video-container glass-card" style={{ marginBottom: '4rem', padding: '1rem', borderRadius: '15px' }}>
             <video
-              src="/videos/delivery-installation.mp4"
+              src="Free Door Delivery & Installation.mp4"
               controls
               autoPlay
               muted
               loop
-              style={{ width: '100%', height: 'auto', borderRadius: '10px', display: 'block', maxHeight: '70vh', objectFit: 'cover' }}
+              style={{ width: '100%', height: 'auto', borderRadius: '10px', display: 'block', maxHeight: '90vh', objectFit: 'cover' }}
             >
               Your browser does not support the video tag.
             </video>
@@ -950,26 +950,34 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
           <div className="gallery-marquee-wrapper" style={{ overflow: 'hidden', padding: '20px 4px 30px 4px', width: '100%' }}>
             <div className="gallery-marquee-track">
-              {galleryItems.map((imgSrc, index) => (
+              {galleryItems.map((item, index) => (
                 <div
                   key={index}
                   className="gallery-card glass-card"
-                  onClick={() => setLightboxImg(imgSrc)}
+                  onClick={() => setLightboxImg(item.src)}
+                  style={{ position: 'relative' }}
                 >
                   <div className="gallery-img-container">
-                    <img src={imgSrc} alt={`Installation ${index + 1}`} className="gallery-img" loading="lazy" />
+                    <img src={item.src} alt={`Installation ${index + 1}`} className="gallery-img" loading="lazy" />
+                  </div>
+                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '5px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
+                    <MapPin size={14} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-bottom' }} /> {item.location}
                   </div>
                 </div>
               ))}
               {/* Duplicate for infinite auto-scroll */}
-              {galleryItems.map((imgSrc, index) => (
+              {galleryItems.map((item, index) => (
                 <div
                   key={`dup-${index}`}
                   className="gallery-card glass-card"
-                  onClick={() => setLightboxImg(imgSrc)}
+                  onClick={() => setLightboxImg(item.src)}
+                  style={{ position: 'relative' }}
                 >
                   <div className="gallery-img-container">
-                    <img src={imgSrc} alt={`Installation Duplicate ${index + 1}`} className="gallery-img" loading="lazy" />
+                    <img src={item.src} alt={`Installation Duplicate ${index + 1}`} className="gallery-img" loading="lazy" />
+                  </div>
+                  <div style={{ position: 'absolute', bottom: '10px', left: '10px', right: '10px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '5px', textAlign: 'center', fontWeight: 'bold', fontSize: '0.9rem', backdropFilter: 'blur(5px)' }}>
+                    <MapPin size={14} style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-bottom' }} /> {item.location}
                   </div>
                 </div>
               ))}
@@ -1037,7 +1045,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* BookKeeper Authorized Partner Section */}
       <section className="bk-home-section">
         <div className="container">
-          <div className="bk-home-badge">We Authorized Sales Partner</div>
+          <div className="bk-home-badge">We are an Authorized Sales Partner</div>
 
           {/* BookKeeper official logo image */}
           <div className="bk-home-logo-wrap">
@@ -1091,54 +1099,36 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       <section className="why-section">
         <div className="container">
           <h2 className="section-title">Why Choose Us</h2>
-          <div className="why-list">
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">01</span>
-              <div className="why-list-icon"><Truck size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Free Door Delivery</h3>
-                <p className="why-list-desc">Premium shockproof packed and delivered free to your doorstep anywhere in Tamil Nadu.</p>
-              </div>
+          <div className="why-grid">
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><Truck size={28} /></div>
+              <h3 className="why-title">Free Door Delivery</h3>
+              <p className="why-desc">Premium shockproof packed and delivered free to your doorstep anywhere in Tamil Nadu.</p>
             </div>
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">02</span>
-              <div className="why-list-icon"><Wrench size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Free Doorstep Installation</h3>
-                <p className="why-list-desc">Our crew assembles, wires, and verifies performance right at your location — no setup hassle.</p>
-              </div>
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><Wrench size={28} /></div>
+              <h3 className="why-title">Free Doorstep Installation</h3>
+              <p className="why-desc">Our crew assembles, wires, and verifies performance right at your location — no setup hassle.</p>
             </div>
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">03</span>
-              <div className="why-list-icon"><DollarSign size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Budget Friendly Builds</h3>
-                <p className="why-list-desc">Maximum hardware performance squeezed into your budget — peak FPS value for every rupee.</p>
-              </div>
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><DollarSign size={28} /></div>
+              <h3 className="why-title">Budget Friendly Builds</h3>
+              <p className="why-desc">Maximum hardware performance squeezed into your budget — peak FPS value for every rupee.</p>
             </div>
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">04</span>
-              <div className="why-list-icon"><Sliders size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Premium Components</h3>
-                <p className="why-list-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair — zero grey-market components.</p>
-              </div>
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><Sliders size={28} /></div>
+              <h3 className="why-title">Premium Components</h3>
+              <p className="why-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair — zero grey-market components.</p>
             </div>
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">05</span>
-              <div className="why-list-icon"><Cpu size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Pro Cable Management</h3>
-                <p className="why-list-desc">Surgical cable routing for optimal airflow, dust resistance, and a showcase-ready build.</p>
-              </div>
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><Cpu size={28} /></div>
+              <h3 className="why-title">Pro Cable Management</h3>
+              <p className="why-desc">Surgical cable routing for optimal airflow, dust resistance, and a showcase-ready build.</p>
             </div>
-            <div className="why-list-item glass-card">
-              <span className="why-list-num">06</span>
-              <div className="why-list-icon"><ShieldCheck size={28} /></div>
-              <div className="why-list-content">
-                <h3 className="why-list-title">Warranty Support</h3>
-                <p className="why-list-desc">Full manufacturer warranties backed by us. We handle RMA and keep your machine protected long-term.</p>
-              </div>
+            <div className="why-card glass-card">
+              <div className="why-icon-container"><ShieldCheck size={28} /></div>
+              <h3 className="why-title">Warranty Support</h3>
+              <p className="why-desc">Full manufacturer warranties backed by us. We handle RMA and keep your machine protected long-term.</p>
             </div>
           </div>
         </div>
@@ -1232,6 +1222,15 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               <img src={pcBuilderLogo} alt="PC BUILD IN MADURAI" style={{ width: '140px', marginBottom: '12px', display: 'block' }} />
               <p>Specializing in custom high-performance gaming and editing computer setups. Built for enthusiasts, by enthusiasts.</p>
               <div className="footer-social-icons">
+                <a
+                  href="https://www.facebook.com/people/Pcbuilder-Computers/100084020059694/"
+                  className="footer-social-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Profile"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
                 <a
                   href="https://www.instagram.com/harishjackson_/"
                   className="footer-social-btn"

@@ -106,7 +106,7 @@ export default function BookKeeperPage() {
 
       {/* ── HERO ── */}
       <section className="bkp-hero">
-        <div className="bkp-hero-badge">We Authorized Sales Partner</div>
+        <div className="bkp-hero-badge">We are an Authorized Sales Partner</div>
 
         {/* BookKeeper official logo */}
         <div className="bkp-logo-wrap">
@@ -319,7 +319,7 @@ export default function BookKeeperPage() {
               </div>
             </div>
             <button type="submit" className="bkp-btn-submit">
-              🚀 Book Now on WhatsApp
+              Book Now
             </button>
           </form>
         </div>
@@ -434,7 +434,7 @@ export default function BookKeeperPage() {
             ))}
           </div>
           <div className="bkp-cta-row">
-            <a href="#demo-form" className="bkp-btn-primary">🚀 Book Now</a>
+            <a href="#demo-form" className="bkp-btn-primary">Book Now</a>
             <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bkp-btn-wa">
               <Phone size={16} /> WhatsApp Now
             </a>
