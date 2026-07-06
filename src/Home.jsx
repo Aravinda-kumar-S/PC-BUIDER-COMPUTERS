@@ -169,10 +169,10 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   const heroSlides = [
-    { img: '/desktop pc.png', label: 'Desktop PC' },
-    { img: '/gaming pc.png', label: 'Gaming PC' },
-    { img: '/editing pc.png', label: 'Editing PC' },
-    { img: '/workstation pc.png', label: 'Workstation PC' },
+    { img: '/desktop_pc.jpg', label: 'Desktop PC' },
+    { img: '/gaming_pc.jpg', label: 'Gaming PC' },
+    { img: '/editing_pc.jpg', label: 'Editing PC' },
+    { img: '/workstation_pc.jpg', label: 'Workstation PC' },
   ];
 
   // Auto-scroll hero slides
@@ -935,7 +935,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
           <div className="video-container glass-card" style={{ marginBottom: '4rem', padding: '1rem', borderRadius: '15px' }}>
             <video
-              src="Free Door Delivery & Installation.mp4"
+              src="/videos/free-door-delivery.mp4"
               controls
               autoPlay
               muted
