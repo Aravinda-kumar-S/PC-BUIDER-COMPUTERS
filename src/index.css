@@ -2211,6 +2211,105 @@ a {
   border-bottom: 1px solid rgba(0, 200, 255, 0.12);
 }
 
+/* ── Animated glowing box wrapper ── */
+.bk-animated-box {
+  position: relative;
+  border-radius: 20px;
+  padding: 3px; /* border thickness */
+  background: conic-gradient(
+    from var(--bk-angle, 0deg),
+    #7b2fff 0deg,
+    #00c8ff 90deg,
+    #00e676 180deg,
+    #00c8ff 270deg,
+    #7b2fff 360deg
+  );
+  animation: bk-border-spin 4s linear infinite;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow:
+    0 0 40px rgba(123, 47, 255, 0.25),
+    0 0 80px rgba(0, 200, 255, 0.12);
+}
+
+@property --bk-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes bk-border-spin {
+  to { --bk-angle: 360deg; }
+}
+
+/* Pulsing glow ring */
+.bk-animated-box::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  background: conic-gradient(
+    from var(--bk-angle, 0deg),
+    rgba(123, 47, 255, 0.4),
+    rgba(0, 200, 255, 0.4),
+    rgba(0, 230, 118, 0.4),
+    rgba(0, 200, 255, 0.4),
+    rgba(123, 47, 255, 0.4)
+  );
+  filter: blur(16px);
+  z-index: -1;
+  animation: bk-border-spin 4s linear infinite, bk-glow-pulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes bk-glow-pulse {
+  from { opacity: 0.5; }
+  to   { opacity: 1; }
+}
+
+/* Inner content background */
+.bk-animated-box-inner {
+  position: relative;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #0d0d1a 0%, #0a0a15 60%, #0d1020 100%);
+  padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 48px);
+  overflow: hidden;
+}
+
+/* Subtle scanline texture */
+.bk-animated-box-inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(255, 255, 255, 0.012) 3px,
+    rgba(255, 255, 255, 0.012) 4px
+  );
+  pointer-events: none;
+  border-radius: 18px;
+}
+
+/* Corner accent dots */
+.bk-animated-box-inner::before {
+  content: '';
+  position: absolute;
+  top: 14px; left: 14px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--electric-blue);
+  box-shadow: 0 0 10px var(--electric-blue),
+    calc(100vw - 60px) 0 0 var(--neon-green),
+    0 calc(100% - 0px) 0 rgba(123, 47, 255, 0.8);
+  animation: bk-corner-blink 2s ease-in-out infinite alternate;
+}
+
+@keyframes bk-corner-blink {
+  from { opacity: 0.6; }
+  to   { opacity: 1; box-shadow: 0 0 18px var(--electric-blue); }
+}
+
 .bk-home-badge {
   display: block;
   width: fit-content;

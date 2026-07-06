@@ -1092,51 +1092,55 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* BookKeeper Authorized Partner Section */}
       <section className="bk-home-section">
         <div className="container">
-          <div className="bk-home-badge">We are an Authorized Sales Partner</div>
+          <div className="bk-animated-box">
+            <div className="bk-animated-box-inner">
 
-          {/* BookKeeper official logo image */}
-          <div className="bk-home-logo-wrap">
-            <img
-              src="/bookkeeper-logo.png"
-              alt="BookKeeper Accounting Software"
-              className="bk-home-logo-img"
-            />
-          </div>
+              <div className="bk-home-badge">We are an Authorized Sales Partner</div>
 
-          {/* Product screenshot */}
-          <div className="bk-home-product-wrap">
-            <img
-              src="/bookkeeper-product.jpg"
-              alt="BookKeeper – Now in 30+ Countries"
-              className="bk-home-product-img"
-            />
-          </div>
-          <p className="bk-home-pills">
-            <span className="bk-pill">GST Billing</span>
-            <span className="bk-pill-dot">•</span>
-            <span className="bk-pill">Accounting</span>
-            <span className="bk-pill-dot">•</span>
-            <span className="bk-pill">Inventory Management</span>
-          </p>
-          <p className="bk-home-desc">
-            Manage your business smarter with <span className="bk-accent">BookKeeper</span>, India's
-            trusted accounting software for <span className="bk-accent">retailers, wholesalers, manufacturers, service providers</span>, retail stores, wholesale shops, <span className="bk-accent">POS Billing</span>, startups and SMEs. As an{' '}
-            <span className="bk-accent">Authorized Sales Partner in Tamil Nadu</span>, we provide
-            genuine licenses, installation, setup, training, and full technical support.
-          </p>
+              {/* BookKeeper official logo image */}
+              <div className="bk-home-logo-wrap">
+                <img
+                  src="/bookkeeper-logo.png"
+                  alt="BookKeeper Accounting Software"
+                  className="bk-home-logo-img"
+                />
+              </div>
 
+              {/* Product screenshot */}
+              <div className="bk-home-product-wrap">
+                <img
+                  src="/bookkeeper-product.jpg"
+                  alt="BookKeeper – Now in 30+ Countries"
+                  className="bk-home-product-img"
+                />
+              </div>
+              <p className="bk-home-pills">
+                <span className="bk-pill">GST Billing</span>
+                <span className="bk-pill-dot">•</span>
+                <span className="bk-pill">Accounting</span>
+                <span className="bk-pill-dot">•</span>
+                <span className="bk-pill">Inventory Management</span>
+              </p>
+              <p className="bk-home-desc">
+                Manage your business smarter with <span className="bk-accent">BookKeeper</span>, India's
+                trusted accounting software for <span className="bk-accent">retailers, wholesalers, manufacturers, service providers</span>, retail stores, wholesale shops, <span className="bk-accent">POS Billing</span>, startups and SMEs. As an{' '}
+                <span className="bk-accent">Authorized Sales Partner in Tamil Nadu</span>, we provide
+                genuine licenses, installation, setup, training, and full technical support.
+              </p>
 
+              <div className="bk-home-cta">
+                <p className="bk-home-cta-text">Ready to Simplify Your Business?</p>
+                <div className="bk-home-cta-btns">
+                  <Link to="/bookkeeper" className="bk-btn-primary">
+                    Learn More <ExternalLink size={16} />
+                  </Link>
+                  <a href="tel:+918667864448" className="bk-btn-primary bk-btn-call">
+                    <Phone size={16} />
+                    Book Now — +91 8667864448
+                  </a>
+                </div>
+              </div>
 
-          <div className="bk-home-cta">
-            <p className="bk-home-cta-text">Ready to Simplify Your Business?</p>
-            <div className="bk-home-cta-btns">
-              <Link to="/bookkeeper" className="bk-btn-primary">
-                Learn More <ExternalLink size={16} />
-              </Link>
-              <a href="tel:+918667864448" className="bk-btn-primary bk-btn-call">
-                <Phone size={16} />
-                Book Now — +91 8667864448
-              </a>
             </div>
           </div>
         </div>
