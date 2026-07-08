@@ -1023,7 +1023,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               loop
               playsInline
               preload="auto"
-              style={{ width: '170%', height: 'auto', borderRadius: '5px', display: 'block', maxHeight: '90vh', objectFit: 'contain' }}
+              style={{ width: '100%', height: 'auto', borderRadius: '21px', display: 'block', maxHeight: '90vh', objectFit: 'contain' }}
             >
               <source src="/videos/delivery-installation.mp4" type="video/mp4" />
               Your browser does not support the video tag.
