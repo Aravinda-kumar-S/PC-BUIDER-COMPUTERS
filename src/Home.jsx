@@ -1112,7 +1112,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               {/* Product screenshot */}
               <div className="bk-home-product-wrap">
                 <img
-                  src="/bookeeper 30+.png"
+                  src="/bookeeper-30plus.png"
                   alt="BookKeeper – Now in 30+ Countries"
                   className="bk-home-product-img"
                 />
