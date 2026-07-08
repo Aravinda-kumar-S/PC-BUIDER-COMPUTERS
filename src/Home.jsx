@@ -250,10 +250,10 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   const heroSlides = [
-    { img: '/desktop_pc.jpg', label: 'Desktop PC' },
-    { img: '/gaming_pc.jpg', label: 'Gaming PC' },
-    { img: '/editing_pc.jpg', label: 'Editing PC' },
-    { img: '/workstation_pc.jpg', label: 'Workstation PC' },
+    { img: '/desktop_pc.png', label: 'Desktop PC' },
+    { img: '/gaming_pc.png', label: 'Gaming PC' },
+    { img: '/editing_pc.png', label: 'Editing PC' },
+    { img: '/workstation_pc.png', label: 'Workstation PC' },
   ];
 
   // Auto-scroll hero slides
