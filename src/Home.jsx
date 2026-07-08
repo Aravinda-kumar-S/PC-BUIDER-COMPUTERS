@@ -250,10 +250,10 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   const heroSlides = [
-    { img: '/desktop_pc.jpg', label: 'Desktop PC' },
-    { img: '/gaming_pc.jpg', label: 'Gaming PC' },
-    { img: '/editing_pc.jpg', label: 'Editing PC' },
-    { img: '/workstation_pc.jpg', label: 'Workstation PC' },
+    { img: '/Desktop pc.png', label: 'Desktop PC' },
+    { img: '/gaming pc.png', label: 'Gaming PC' },
+    { img: '/editing pc.png', label: 'Editing PC' },
+    { img: '/workstation pc.png', label: 'Workstation PC' },
   ];
 
   // Auto-scroll hero slides
@@ -1014,15 +1014,18 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
           <h2 className="section-title" style={{ marginBottom: '2rem' }}>Free Door Delivery & Door Step Installation</h2>
 
-          <div className="video-container glass-card" style={{ marginBottom: '4rem', padding: '1rem', borderRadius: '15px' }}>
+          <div className="video-container glass-card" style={{ marginBottom: '4rem', padding: '1rem', borderRadius: '15px', background: 'linear-gradient(135deg, rgba(0,0,0,0.6), rgba(20,20,40,0.8))', boxShadow: '0 8px 32px rgba(0,255,255,0.15)' }}>
             <video
-              src="/videos/free-door-delivery.mp4"
+              src="/videos/delivery-installation.mp4"
               controls
               autoPlay
               muted
               loop
-              style={{ width: '100%', height: 'auto', borderRadius: '10px', display: 'block', maxHeight: '90vh', objectFit: 'cover' }}
+              playsInline
+              preload="auto"
+              style={{ width: '170%', height: 'auto', borderRadius: '5px', display: 'block', maxHeight: '90vh', objectFit: 'contain' }}
             >
+              <source src="/videos/delivery-installation.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -1109,7 +1112,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               {/* Product screenshot */}
               <div className="bk-home-product-wrap">
                 <img
-                  src="/bookkeeper-product.jpg"
+                  src="/bookeeper 30+.png"
                   alt="BookKeeper – Now in 30+ Countries"
                   className="bk-home-product-img"
                 />

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Check, Phone, ChevronRight, ArrowRight } from 'lucide-react';
 import pcBuilderLogo from './assets/PCBUILDER.png';
 import bkLogo from '/bookkeeper-logo.png';
-import bkProduct from '/bookkeeper-product.jpg';
+import bkProduct from '/bookkeeper-product.png';
 
 const WHATSAPP_NUMBER = '+918667864448';
 
