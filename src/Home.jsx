@@ -781,7 +781,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                 <span className="txt-green">AMD Radeon Graphics</span>, every rig is meticulously assembled
                 using hand-picked, <span className="txt-green">premium brand components</span>. Before dispatch,
                 your system undergoes rigorous thermal stress-testing and{' '}
-                <span className="txt-green">professional cable</span> management to guarantee{' '}
+                <span className="txt-green">professional cable management</span> to guarantee{' '}
                 <span className="txt-green">peak performance</span> straight out of the box.
               </p>
             </div>
