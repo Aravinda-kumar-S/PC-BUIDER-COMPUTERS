@@ -3,8 +3,16 @@ import React, { useEffect, useRef, useState } from 'react';
 export default function CustomCursor() {
   const cursorRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check if the device has a coarse pointer (mobile/tablet/touch)
+    const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    if (hasCoarsePointer) {
+      setIsMobile(true);
+      return;
+    }
+
     const cursor = cursorRef.current;
     if (!cursor) return;
 
@@ -50,6 +58,8 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
+  if (isMobile) return null;
+
   return (
     <div
       ref={cursorRef}
@@ -68,3 +78,4 @@ export default function CustomCursor() {
     </div>
   );
 }
+

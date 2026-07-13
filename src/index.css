@@ -4709,12 +4709,17 @@ svg {
 }
 
 /* ── Premium Gaming Custom Neon Green Cursor ── */
+.custom-cursor-wrapper {
+  display: none;
+}
+
 @media (pointer: fine) {
   html, body, a, button, select, input, textarea, [role="button"] {
     cursor: none !important;
   }
 
   .custom-cursor-wrapper {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
