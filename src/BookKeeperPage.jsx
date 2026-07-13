@@ -126,14 +126,14 @@ export default function BookKeeperPage() {
 
         <p className="bkp-hero-desc">
           Grow your business with <span className="bkp-green">BookKeeper Accounting Software</span>, a trusted
-          GST-ready business management solution designed for Retail Shops, Wholesale Businesses, Manufacturers,
-          Distributors, Medical Stores, Service Providers, Startups, and Small &amp; Medium Enterprises (SMEs).
+          GST-ready business management solution designed for <span className="bkp-green">Retail Shops</span>, <span className="bkp-green">Wholesale Businesses</span>, Manufacturers,
+          Distributors, Medical Stores, <span className="bkp-green">Service Providers</span>, Startups, and Small &amp; Medium Enterprises (SMEs).
         </p>
         <p className="bkp-hero-desc">
-          As an <span className="bkp-green">Authorized BookKeeper Sales Partner</span>, we provide genuine software
-          licenses, professional installation, complete setup, user training, technical support, and annual renewal
+          As an <span className="bkp-green">Authorized BookKeeper Sales Partner</span>, we provide genuine <span className="bkp-green">software
+          licenses</span>, <span className="bkp-green">professional installation</span>, complete setup, <span className="bkp-green">user training, technical support</span>, and annual renewal
           services. Whether you're starting a new business or upgrading your accounting system, BookKeeper helps
-          streamline your operations with accuracy, speed, and compliance.
+          streamline your operations with <span className="bkp-green">accuracy, speed, and compliance</span>.
         </p>
 
         <div className="bkp-cta-row">

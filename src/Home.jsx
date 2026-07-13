@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import SectionHeading from './SectionHeading';
 import {
   Cpu,
   Smartphone,
@@ -250,10 +251,10 @@ export default function Home() {
   const [heroSlide, setHeroSlide] = useState(0);
 
   const heroSlides = [
-    { img: '/desktop_pc.png', label: 'Desktop PC' },
+    { img: '/desktop_pc.png', label: 'Desktop Computer' },
     { img: '/gaming_pc.png', label: 'Gaming PC' },
     { img: '/editing_pc.png', label: 'Editing PC' },
-    { img: '/workstation_pc.png', label: 'Workstation PC' },
+    { img: '/workstation_pc.png', label: 'Workstation' },
   ];
 
   // Auto-scroll hero slides
@@ -271,7 +272,8 @@ export default function Home() {
     phone: '',
     budget: '',
     usage: 'Gaming PC',
-    secondaryUsage: ''
+    secondaryUsage: '',
+    message: ''
   });
 
   // Custom Checklist Config State
@@ -349,6 +351,92 @@ export default function Home() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Dynamic theme-aware hover system — IntersectionObserver
+  useEffect(() => {
+    const sectionThemes = {
+      home:      { primary: '#00C8FF', accent: '#8DFF00', glow: 'rgba(0,200,255,0.4)',   glowSoft: 'rgba(0,200,255,0.15)' },
+      about:     { primary: '#8DFF00', accent: '#7B2FFF', glow: 'rgba(141,255,0,0.4)',   glowSoft: 'rgba(141,255,0,0.15)' },
+      services:  { primary: '#7B2FFF', accent: '#00C8FF', glow: 'rgba(123,47,255,0.4)',  glowSoft: 'rgba(123,47,255,0.15)' },
+      enquiry:   { primary: '#00C8FF', accent: '#7B2FFF', glow: 'rgba(0,200,255,0.4)',   glowSoft: 'rgba(0,200,255,0.15)' },
+      gallery:   { primary: '#8DFF00', accent: '#00C8FF', glow: 'rgba(141,255,0,0.4)',   glowSoft: 'rgba(141,255,0,0.15)' },
+      brands:    { primary: '#7B2FFF', accent: '#8DFF00', glow: 'rgba(123,47,255,0.4)',  glowSoft: 'rgba(123,47,255,0.15)' },
+      bookkeeper:{ primary: '#00C8FF', accent: '#8DFF00', glow: 'rgba(0,200,255,0.4)',   glowSoft: 'rgba(0,200,255,0.15)' },
+      whychoose: { primary: '#8DFF00', accent: '#7B2FFF', glow: 'rgba(141,255,0,0.4)',   glowSoft: 'rgba(141,255,0,0.15)' },
+      contact:   { primary: '#7B2FFF', accent: '#00C8FF', glow: 'rgba(123,47,255,0.4)',  glowSoft: 'rgba(123,47,255,0.15)' },
+    };
+
+    // Map sections: some use IDs, some use class selectors
+    const sectionSelectors = [
+      { id: 'home',       key: 'home' },
+      { id: 'about',      key: 'about' },
+      { id: 'services',   key: 'services' },
+      { id: 'enquiry',    key: 'enquiry' },
+      { id: 'gallery',    key: 'gallery' },
+      { cls: '.brands-marquee',  key: 'brands' },
+      { cls: '.bk-home-section', key: 'bookkeeper' },
+      { cls: '.why-section:last-of-type', key: 'whychoose' },
+      { id: 'contact',    key: 'contact' },
+    ];
+
+    const ratioMap = new Map();
+
+    const applyTheme = (themeKey) => {
+      const theme = sectionThemes[themeKey];
+      if (!theme) return;
+      const root = document.documentElement;
+      root.style.setProperty('--hover-primary', theme.primary);
+      root.style.setProperty('--hover-accent', theme.accent);
+      root.style.setProperty('--hover-glow', theme.glow);
+      root.style.setProperty('--hover-glow-soft', theme.glowSoft);
+      root.setAttribute('data-active-theme', themeKey);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          ratioMap.set(entry.target, {
+            ratio: entry.intersectionRatio,
+            key: entry.target.dataset.themeKey,
+          });
+        });
+
+        // Find the section with the highest intersection ratio
+        let bestRatio = 0;
+        let bestKey = 'home';
+        ratioMap.forEach((val) => {
+          if (val.ratio > bestRatio) {
+            bestRatio = val.ratio;
+            bestKey = val.key;
+          }
+        });
+
+        if (bestRatio > 0) {
+          applyTheme(bestKey);
+        }
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8],
+        rootMargin: '-5% 0px -5% 0px',
+      }
+    );
+
+    // Observe each section
+    const observedElements = [];
+    sectionSelectors.forEach(({ id, cls, key }) => {
+      const el = id ? document.getElementById(id) : document.querySelector(cls);
+      if (el) {
+        el.dataset.themeKey = key;
+        observer.observe(el);
+        observedElements.push(el);
+      }
+    });
+
+    return () => {
+      observedElements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, []);
 
   // Track Mouse movement for Parallax
@@ -483,6 +571,7 @@ export default function Home() {
 *Budget:* ${enquiry.budget}
 *Primary Usage:* ${enquiry.usage}
 *Secondary Usage:* ${enquiry.secondaryUsage || 'Not specified'}
+*Message:* ${enquiry.message || 'None'}
 
 *Custom Hardware Configuration:*
 ${formattedComponents || 'Requesting Default Spec Recommendation'}
@@ -629,7 +718,10 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
         {/* ── Row 1: Centered heading + tagline ── */}
         <div className="hero-header-block">
-          <p className="hero-tag">PC BUILD IN MADURAI</p>
+          <p className="hero-tag">
+            <img src="/favicon.svg" alt="PC BUILD IN MADURAI Logo" style={{ height: 'clamp(2.6rem, 6.5vw, 4.6rem)', width: 'auto' }} />
+            PC BUILD IN MADURAI
+          </p>
           <p className="hero-tag-sub">
             Custom Gaming PCs &amp; Video Editing Workstations in Madurai&nbsp;
             <span className="hero-tag-divider">|</span>&nbsp;
@@ -671,25 +763,25 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         {/* ── Row 3: Title + description content ── */}
         <div className="hero-body container">
           <h1 className="hero-title">
-            Build Your <span>Dream PC</span> Within Your Budget
+            Build Your <span>Dream PC</span> Within Your <span className="title-underline">Budget</span>
           </h1>
 
           <div className="hero-body-text">
             <p className="hero-body-para hero-body-intro">
               Welcome to{' '}
               <span className="hb-accent">PCBUILDER COMPUTERS</span>
-              , your expert assembled computer shop located in the heart of Madurai, Tamilnadu.
+              , your expert assembled computer shop located in the heart of <span className="hb-accent">Madurai, Tamilnadu</span>.
             </p>
             <p className="hero-body-para">
               We specialize in high-quality <span className="hb-accent">computer assembling</span>, providing{' '}
               <span className="hb-accent">custom PCs</span>{' '}
               tailored to meet our client's individual needs. Whether for{' '}
               <span className="hb-accent">gaming</span>,
-              professional <span className="hb-accent">workstations</span>, or general use, our skilled technicians combine{' '}
-              <span className="hb-accent">top-tier components</span> to construct reliable and <span className="hb-accent">high-performance</span> systems.
+              professional <span className="hb-accent">workstations</span>, or <span className="hb-accent">general use</span>, our skilled technicians combine{' '}
+              <span className="hb-accent">top-tier components</span> to construct <span className="hb-accent">reliable</span> and <span className="hb-accent">high-performance</span> systems.
             </p>
             <p className="hero-body-para">
-              Our commitment to delivering unparalleled service and value ensures that every computer we build
+              Our commitment to delivering unparalleled <span className="hb-accent">service</span> and value ensures that every computer we build
               not only meets but{' '}
               <span className="hb-highlight">exceeds client expectations</span>.
               Trust <span className="hb-accent">PCBUILDER COMPUTERS</span> for all your <span className="hb-accent">computing solutions</span>.
@@ -754,7 +846,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         <div className="container">
 
           {/* ── Section heading ── */}
-          <h2 className="section-title">Your Gaming &amp; Editing PC Destination</h2>
+          <SectionHeading>Your Gaming &amp; Editing PC Destination</SectionHeading>
 
           <div className="about-grid">
 
@@ -766,10 +858,10 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               <p className="about-body-text">
                 Welcome to <span className="txt-green">PCBUILDER COMPUTERS</span>, Madurai's premier destination for{' '}
                 <span className="txt-green">custom-built computers</span>. We specialize in designing and assembling{' '}
-                <span className="txt-green">high-performance</span> hardware configurations tailored to your exact needs.
-                From industry-leading Custom Gaming PCs and{' '}
+                <span className="txt-green">high-performance</span> hardware configurations tailored to your <span className="txt-green">exact needs</span>.
+                From industry-leading Custom <span className="txt-green">Gaming PCs</span> and{' '}
                 <span className="txt-green">4K Video Editing Workstations</span> to reliable{' '}
-                <span className="txt-green">Office Desktops</span> and high-compute Enterprise Solutions,
+                <span className="txt-green">Office Desktops</span> and high-compute <span className="txt-green">Enterprise Solutions</span>,
                 we deliver <span className="txt-green">uncompromising quality</span>.
               </p>
 
@@ -779,7 +871,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                 <span className="txt-green">AMD Ryzen Processors</span> paired with cutting-edge{' '}
                 <span className="txt-green">NVIDIA RTX Graphics</span> or{' '}
                 <span className="txt-green">AMD Radeon Graphics</span>, every rig is meticulously assembled
-                using hand-picked, <span className="txt-green">premium brand components</span>. Before dispatch,
+                using <span className="txt-green">hand-picked</span>, <span className="txt-green">premium brand components</span>. Before dispatch,
                 your system undergoes rigorous thermal stress-testing and{' '}
                 <span className="txt-green">professional cable management</span> to guarantee{' '}
                 <span className="txt-green">peak performance</span> straight out of the box.
@@ -793,12 +885,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
               </h3>
 
               <p className="about-body-text">
-                A custom PC is more than just hardware — it's the foundation of your gaming, content
-                creation, and professional workflow. Our expert-built systems are engineered for{' '}
+                A custom PC is more than just hardware — it's the foundation of your <span className="txt-blue">gaming</span>, <span className="txt-blue">content
+                  creation</span>, and <span className="txt-blue">professional workflow</span>. Our expert-built systems are engineered for{' '}
                 <span className="txt-blue">maximum cooling</span>, quieter operation,{' '}
                 <span className="txt-blue">higher FPS</span>, and{' '}
                 <span className="txt-blue">faster rendering performance</span> while maintaining
-                outstanding stability.
+                <span className="txt-blue"> outstanding stability</span>.
               </p>
 
               <p className="about-quality-heading">Our Commitment to Quality</p>
@@ -828,7 +920,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* Services Section */}
       <section id="services" className="why-section">
         <div className="container">
-          <h2 className="section-title">Our Services</h2>
+          <SectionHeading>Our Services</SectionHeading>
           <div className="why-grid">
             <div className="why-card glass-card">
               <div className="why-icon-container"><Sliders size={28} /></div>
@@ -863,7 +955,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Wrench size={28} /></div>
               <h3 className="why-title">Deep Cleaning &amp; Upgrade</h3>
-              <p className="why-desc">Professional deep cleaning, thermal paste replacement, RAM / SSD / GPU upgrades, OS / BIOS Upgrade and performance tuning for your existing system.</p>
+              <p className="why-desc">Professional deep cleaning, thermal paste replacement,CPU/ RAM / SSD / GPU upgrades, OS / BIOS Upgrade and performance tuning for your existing system.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><ShieldCheck size={28} /></div>
@@ -873,7 +965,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Laptop size={28} /></div>
               <h3 className="why-title">Laptop Services</h3>
-              <p className="why-desc">Top laptop repair & maintenance: Screen/battery replacements, SSD/RAM upgrades, virus removal & Laptop performance optimization for all brands.</p>
+              <p className="why-desc">Top laptop repair & maintenance: Screen/battery/Keyboard /Cooling fan replacements, SSD/RAM upgrades, BIOS upgrades,virus removal & Laptop performance optimization for all brands.</p>
             </div>
           </div>
         </div>
@@ -882,7 +974,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* Enquiry Section */}
       <section id="enquiry" className="enquiry-section">
         <div className="container">
-          <h2 className="section-title">Configure Your Custom PC</h2>
+          <SectionHeading>Configure Your Custom PC</SectionHeading>
           <div className="enquiry-card glass-card">
             <form onSubmit={handleSubmit}>
               <div className="form-grid">
@@ -923,7 +1015,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="budget">Estimated Budget (INR)</label>
+                  <label htmlFor="budget">Approximate value (Rs)</label>
                   <input
                     type="text"
                     id="budget"
@@ -942,12 +1034,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     value={enquiry.usage}
                     onChange={(e) => setEnquiry({ ...enquiry, usage: e.target.value })}
                   >
-                    <option value="Gaming PC">Gaming PC</option>
+                    <option value="Gaming ">Gaming </option>
                     <option value="4K Gaming">4K Gaming</option>
                     <option value="4K Video Editing">4K Video Editing</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
-                    <option value="Animation">Animation</option>
+                    <option value="Animation work">Animation work </option>
                     <option value="AI Development">AI Development</option>
                     <option value="Architecture / Builder Work">Architecture / Builder Work</option>
                     <option value="Office Work">Office Work</option>
@@ -959,9 +1051,9 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     <option value="Software Development">Software Development</option>
                     <option value="College Use">College Use</option>
                     <option value="School Use">School Use</option>
-                    <option value="YouTube Creator">YouTube Creator</option>
-                    <option value="Industrial Use">Industrial Use</option>
-                    <option value="Custom Requirement">Custom Requirement</option>
+                    <option value="YouTube streaming">YouTube streaming</option>
+                    <option value="Industrial ">Industrial </option>
+                    <option value="Others">Others</option>
                   </select>
                 </div>
 
@@ -974,12 +1066,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     onChange={(e) => setEnquiry({ ...enquiry, secondaryUsage: e.target.value })}
                   >
                     <option value="">-- Select Secondary Usage --</option>
-                    <option value="Gaming PC">Gaming PC</option>
+                    <option value="Gaming ">Gaming </option>
                     <option value="4K Gaming">4K Gaming</option>
                     <option value="4K Video Editing">4K Video Editing</option>
                     <option value="Video Editing">Video Editing</option>
                     <option value="Photo Editing">Photo Editing</option>
-                    <option value="Animation">Animation</option>
+                    <option value="Animation work">Animation work</option>
                     <option value="AI Development">AI Development</option>
                     <option value="Architecture / Builder Work">Architecture / Builder Work</option>
                     <option value="Office Work">Office Work</option>
@@ -991,10 +1083,23 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                     <option value="Software Development">Software Development</option>
                     <option value="College Use">College Use</option>
                     <option value="School Use">School Use</option>
-                    <option value="YouTube Creator">YouTube Creator</option>
-                    <option value="Industrial Use">Industrial Use</option>
-                    <option value="Custom Requirement">Custom Requirement</option>
+                    <option value="YouTube / streaming">YouTube streaming </option>
+                    <option value="Industrial ">Industrial </option>
+                    <option value="Others">Others</option>
                   </select>
+                </div>
+
+                <div className="form-group form-full">
+                  <label htmlFor="message">Message <span style={{ color: 'var(--text-secondary)', fontWeight: 400, fontSize: '0.8rem' }}>(Optional)</span></label>
+                  <textarea
+                    id="message"
+                    className="form-control"
+                    placeholder="Any specific requirements or questions?"
+                    rows="4"
+                    style={{ resize: 'vertical' }}
+                    value={enquiry.message}
+                    onChange={(e) => setEnquiry({ ...enquiry, message: e.target.value })}
+                  ></textarea>
                 </div>
               </div>
 
@@ -1012,7 +1117,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       <section id="gallery" className="gallery-section">
         <div className="container">
 
-          <h2 className="section-title" style={{ marginBottom: '2rem' }}>Free Door Delivery & Door Step Installation</h2>
+          <SectionHeading style={{ marginBottom: '2rem' }}>Free Door Delivery & Door Step Installation</SectionHeading>
 
           <div className="video-container glass-card" style={{ marginBottom: '4rem', padding: '1rem', borderRadius: '15px', background: 'linear-gradient(135deg, rgba(0,0,0,0.6), rgba(20,20,40,0.8))', boxShadow: '0 8px 32px rgba(0,255,255,0.15)' }}>
             <video
@@ -1030,7 +1135,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             </video>
           </div>
 
-          <h2 className="section-title">Our Recent Installations</h2>
+          <SectionHeading>Our Recent Installations</SectionHeading>
 
           <GalleryMarquee items={galleryItems} onImageClick={setLightboxImg} />
 
@@ -1044,7 +1149,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
       {/* Brands Marquee */}
       <section className="brands-marquee">
-        <h2 className="section-title" style={{ textAlign: 'center', paddingTop: '2rem', marginBottom: '1.5rem' }}>We Dealing With</h2>
+        <SectionHeading style={{ textAlign: 'center', paddingTop: '2rem', marginBottom: '1.5rem' }}>We Dealing With</SectionHeading>
         <div className="marquee-track">
           {[
             { name: 'MSI', file: '/logos/msi-new.png' },
@@ -1117,6 +1222,9 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   className="bk-home-product-img"
                 />
               </div>
+              <p style={{ textAlign: 'center', color: 'var(--text-primary)', fontSize: '0.9rem', fontWeight: 700, letterSpacing: '1px', marginBottom: '12px' }}>
+                SUPPORTED DEVICES IOS / ANDROID / WINDOWS
+              </p>
               <p className="bk-home-pills">
                 <span className="bk-pill">GST Billing</span>
                 <span className="bk-pill-dot">•</span>
@@ -1152,12 +1260,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* Why Choose Us */}
       <section className="why-section">
         <div className="container">
-          <h2 className="section-title">Why Choose Us</h2>
+          <SectionHeading>Why Choose Us</SectionHeading>
           <div className="why-grid">
             <div className="why-card glass-card">
               <div className="why-icon-container"><Truck size={28} /></div>
               <h3 className="why-title">Free Door Delivery</h3>
-              <p className="why-desc">Premium shockproof packed and delivered free to your doorstep anywhere in Tamil Nadu.</p>
+              <p className="why-desc">Premium shockproof packed and delivered free to your doorstep anywhere.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Wrench size={28} /></div>
@@ -1172,7 +1280,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Sliders size={28} /></div>
               <h3 className="why-title">Premium Components</h3>
-              <p className="why-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair — zero grey-market components.</p>
+              <p className="why-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair,NVIDIA,Deep Cool,Cooler Master,thermaltake,Zotac -zero grey-market components.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Cpu size={28} /></div>
@@ -1194,11 +1302,17 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
       {/* Contact Section */}
       <section id="contact" className="contact-section">
         <div className="container">
-          <h2 className="section-title">Connect With Us</h2>
+          <SectionHeading>Connect With Us</SectionHeading>
           <div className="contact-grid">
             <div className="contact-info glass-card" style={{ padding: '40px' }}>
               <div className="contact-header">
-                <h3 className="contact-title" style={{ color: 'var(--neon-green)' }}>PCBUILDER Computers</h3>
+                <h3 className="contact-title" style={{
+                  background: 'linear-gradient(to right, #78F626, #1CD1CE, #22A5DE, #6A46FF)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}>PCBUILDER Computers</h3>
                 <p className="contact-desc">
                   Visit our physical experience store in Madurai, or reach out to our team of custom building experts today.
                 </p>
@@ -1311,6 +1425,15 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   aria-label="Justdial Profile"
                 >
                   <Compass size={20} />
+                </a>
+                <a
+                  href="https://www.youtube.com/@pcbuildercomputers"
+                  className="footer-social-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube Channel"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 </a>
               </div>
             </div>

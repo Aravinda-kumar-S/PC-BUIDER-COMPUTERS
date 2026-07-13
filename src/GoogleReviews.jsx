@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Star, ChevronLeft, ChevronRight, ExternalLink } from 'lucide-react';
+import SectionHeading from './SectionHeading';
 
 // Real Google reviews from PCBUILDER Computers, Madurai
 // Source: https://maps.app.goo.gl/PCBUILDER
@@ -155,7 +156,7 @@ export default function GoogleReviews() {
 
         {/* Section Header */}
         <div className="reviews-header">
-          <h2 className="section-title">What Our Customers Say</h2>
+          <SectionHeading>What Our Customers Say</SectionHeading>
           <div className="reviews-overall">
             <div className="reviews-google-badge">
               {/* Google "G" Logo */}

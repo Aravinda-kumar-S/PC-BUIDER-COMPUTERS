@@ -11,6 +11,13 @@
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
   --font-rajdhani: 'Rajdhani', sans-serif;
+
+  /* Dynamic theme-aware hover system */
+  --hover-primary: #00C8FF;
+  --hover-accent: #8DFF00;
+  --hover-glow: rgba(0, 200, 255, 0.4);
+  --hover-glow-soft: rgba(0, 200, 255, 0.15);
+  --hover-gradient: linear-gradient(135deg, var(--hover-primary), var(--hover-accent));
 }
 
 * {
@@ -64,9 +71,9 @@ a {
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 200, 255, 0.4);
-  box-shadow: 0 0 25px rgba(123, 47, 255, 0.25);
-  transform: translateY(-5px);
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 20px var(--hover-glow-soft), 0 0 40px var(--hover-glow-soft);
+  transform: translateY(-5px) scale(1.03);
 }
 
 /* Neon Glows */
@@ -131,8 +138,9 @@ a {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px var(--electric-blue);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 25px var(--hover-glow), 0 0 50px var(--hover-glow-soft);
+  background: linear-gradient(135deg, var(--hover-primary) 0%, var(--hover-accent) 100%);
 }
 
 .btn-primary:hover::before {
@@ -159,10 +167,11 @@ a {
 }
 
 .btn-secondary:hover {
-  background: var(--neon-green);
+  background: var(--hover-accent);
   color: var(--dark-black);
-  box-shadow: 0 0 20px var(--neon-green);
-  transform: translateY(-2px);
+  border-color: var(--hover-accent);
+  box-shadow: 0 0 20px var(--hover-glow), 0 0 40px var(--hover-glow-soft);
+  transform: translateY(-2px) scale(1.03);
 }
 
 /* Call Now button */
@@ -188,8 +197,8 @@ a {
 
 .btn-call:hover {
   background: linear-gradient(135deg, #00e676, #69f0ae);
-  box-shadow: 0 0 28px rgba(0, 230, 118, 0.55);
-  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(0, 230, 118, 0.55), 0 0 15px var(--hover-glow-soft);
+  transform: translateY(-2px) scale(1.03);
   color: #000;
 }
 
@@ -276,6 +285,21 @@ a {
   padding: 0 24px;
 }
 
+.section-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section-heading-line {
+  width: clamp(120px, 20vw, 200px);
+  height: 2px;
+  background: var(--electric-blue);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.8), 0 0 20px rgba(0, 200, 255, 0.4);
+  margin-bottom: 18px; /* Spacing between the line and the heading */
+}
+
 .section-title {
   font-family: var(--font-orbitron);
   font-size: clamp(2rem, 4vw, 3rem);
@@ -353,12 +377,13 @@ a {
   letter-spacing: 1px;
   position: relative;
   padding: 8px 0;
-  transition: color 0.3s ease;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--neon-green);
+  color: var(--hover-primary);
+  text-shadow: 0 0 8px var(--hover-glow-soft);
 }
 
 .nav-link::after {
@@ -368,13 +393,16 @@ a {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--rgb-purple), var(--electric-blue));
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--hover-primary), var(--hover-accent));
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 6px var(--hover-glow-soft);
+  border-radius: 2px;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+  box-shadow: 0 0 12px var(--hover-glow);
 }
 
 .nav-whatsapp {
@@ -485,7 +513,7 @@ a {
 
 .hero-tag {
   font-family: var(--font-orbitron);
-  font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.6rem);
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -493,7 +521,10 @@ a {
   text-shadow: 0 0 20px rgba(0, 200, 255, 0.45), 0 0 50px rgba(0, 200, 255, 0.2);
   margin-bottom: 14px;
   line-height: 1.2;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .hero-tag-sub {
@@ -621,7 +652,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.03em;
   line-height: 1.12;
-  margin-bottom: 14px;
+  margin-bottom: 52px;
   text-align: center;
 }
 
@@ -632,13 +663,26 @@ a {
   background-clip: text;
 }
 
-.hero-title::after {
+.title-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-title .title-underline {
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  color: #ffffff;
+}
+
+.title-underline::after {
   content: '';
-  display: block;
-  width: 100px;
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
-  margin: 18px auto 32px;
+  background: var(--electric-blue);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.8), 0 0 20px rgba(0, 200, 255, 0.4);
 }
 
 .hero-body-text {
@@ -1038,8 +1082,9 @@ a {
 }
 
 .gallery-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 200, 255, 0.2);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 32px var(--hover-glow), 0 0 20px var(--hover-glow-soft);
+  border-color: var(--hover-primary);
 }
 
 .gallery-img-container {
@@ -1230,10 +1275,10 @@ a {
 }
 
 .why-card:hover .why-icon-container {
-  background: rgba(141, 255, 0, 0.1);
-  color: var(--neon-green);
-  border-color: rgba(141, 255, 0, 0.3);
-  box-shadow: 0 0 24px rgba(141, 255, 0, 0.3);
+  background: color-mix(in srgb, var(--hover-primary) 15%, transparent);
+  color: var(--hover-primary);
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 24px var(--hover-glow), 0 0 48px var(--hover-glow-soft);
 }
 
 .why-title {
@@ -1456,7 +1501,8 @@ a {
 }
 
 .footer-links a:hover {
-  color: var(--neon-green);
+  color: var(--hover-primary);
+  text-shadow: 0 0 6px var(--hover-glow-soft);
 }
 
 .footer-social-icons {
@@ -1478,10 +1524,11 @@ a {
 }
 
 .footer-social-btn:hover {
-  background: rgba(123, 47, 255, 0.1);
-  border-color: var(--rgb-purple);
-  color: #fff;
-  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--hover-primary) 12%, transparent);
+  border-color: var(--hover-primary);
+  color: var(--hover-primary);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 12px var(--hover-glow-soft);
 }
 
 .footer-bottom {
@@ -4444,3 +4491,255 @@ svg {
   padding: 4px 12px;
   white-space: nowrap;
 }
+
+/* ══════════════════════════════════════════════════════
+   DYNAMIC THEME-AWARE HOVER SYSTEM — Enhancement Layer
+   All rules reference --hover-* CSS variables that are
+   dynamically updated via IntersectionObserver in JS.
+   ══════════════════════════════════════════════════════ */
+
+/* Smooth CSS variable transition on root */
+:root {
+  transition: --hover-primary 0.6s ease,
+              --hover-accent 0.6s ease,
+              --hover-glow 0.6s ease,
+              --hover-glow-soft 0.6s ease;
+}
+
+/* Register custom properties for smooth interpolation */
+@property --hover-primary {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #00C8FF;
+}
+
+@property --hover-accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #8DFF00;
+}
+
+@property --hover-glow {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 200, 255, 0.4);
+}
+
+@property --hover-glow-soft {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: rgba(0, 200, 255, 0.15);
+}
+
+/* ── Contact Items ── */
+.contact-item {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-item:hover {
+  transform: translateX(4px);
+}
+
+.contact-item:hover .contact-item-icon {
+  background: color-mix(in srgb, var(--hover-primary) 15%, transparent);
+  border-color: var(--hover-primary);
+  color: var(--hover-primary);
+  box-shadow: 0 0 16px var(--hover-glow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-item-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── FAB Buttons ── */
+.fab-btn:hover {
+  box-shadow: 0 0 20px var(--hover-glow), 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Marquee Brand Logos ── */
+.marquee-logo-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.marquee-logo-card:hover {
+  transform: scale(1.08);
+  filter: brightness(1.2) drop-shadow(0 0 8px var(--hover-glow-soft));
+}
+
+.marquee-item:hover {
+  color: var(--hover-primary);
+  text-shadow: 0 0 10px var(--hover-glow);
+}
+
+/* ── Counter Cards ── */
+.counter-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.counter-card:hover {
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 16px var(--hover-glow-soft);
+  transform: translateY(-3px) scale(1.03);
+}
+
+.counter-card:hover .counter-num {
+  color: var(--hover-primary);
+  text-shadow: 0 0 8px var(--hover-glow-soft);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── About Section Cards ── */
+.about-card::before {
+  transition: background 0.6s ease;
+}
+
+.about-card:hover::before {
+  background: linear-gradient(180deg, var(--hover-primary), var(--hover-accent));
+}
+
+/* ── Form Controls ── */
+.form-control:hover {
+  border-color: color-mix(in srgb, var(--hover-primary) 40%, transparent);
+}
+
+.form-control:focus {
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 15px var(--hover-glow-soft);
+}
+
+/* ── Image Hover Effects ── */
+.gallery-card:hover .gallery-img {
+  transform: scale(1.07);
+  filter: brightness(1.05);
+}
+
+.hero-photo-slide img {
+  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Checkbox Item Hover ── */
+.checkbox-item:hover {
+  background: color-mix(in srgb, var(--hover-primary) 10%, transparent);
+  border-color: color-mix(in srgb, var(--hover-primary) 30%, transparent);
+}
+
+/* ── Filter Buttons ── */
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--hover-primary);
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 15px var(--hover-glow);
+}
+
+/* ── Slide Dots ── */
+.slide-dot {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-dot:hover {
+  background: var(--hover-primary);
+  box-shadow: 0 0 8px var(--hover-glow-soft);
+}
+
+/* ── BookKeeper Section CTA Buttons ── */
+.bk-btn-primary {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bk-btn-primary:hover {
+  box-shadow: 0 0 20px var(--hover-glow), 0 0 40px var(--hover-glow-soft);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ── Why Card Enhancement ── */
+.why-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.why-card:hover {
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 20px var(--hover-glow-soft), 0 0 40px var(--hover-glow-soft);
+  transform: translateY(-5px) scale(1.03);
+}
+
+.why-card:hover .why-title {
+  color: var(--hover-primary);
+  text-shadow: 0 0 8px var(--hover-glow-soft);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Enquiry Card Enhancement ── */
+.enquiry-card:hover {
+  border-color: var(--hover-primary);
+  box-shadow: 0 0 20px var(--hover-glow-soft), 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Theme Transition Pulse Keyframes ── */
+@keyframes theme-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--hover-glow-soft);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--hover-glow);
+  }
+}
+
+/* ── Accessibility: Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .glass-card:hover,
+  .why-card:hover,
+  .gallery-card:hover,
+  .counter-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-call:hover,
+  .footer-social-btn:hover,
+  .marquee-logo-card:hover,
+  .bk-btn-primary:hover {
+    transform: none !important;
+  }
+}
+
+/* ── Premium Gaming Custom Neon Green Cursor ── */
+@media (pointer: fine) {
+  html, body, a, button, select, input, textarea, [role="button"] {
+    cursor: none !important;
+  }
+
+  .custom-cursor-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    margin-left: -3px;
+    margin-top: -3px;
+    pointer-events: none;
+    z-index: 999999;
+    will-change: transform;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .custom-cursor-wrapper.is-visible {
+    opacity: 1;
+  }
+
+  .cursor-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.5));
+  }
+}
+

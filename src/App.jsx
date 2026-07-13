@@ -2,10 +2,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import GalleryPage from './GalleryPage';
 import BookKeeperPage from './BookKeeperPage';
+import CustomCursor from './CustomCursor';
 
 function App() {
   return (
     <BrowserRouter>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/gallery" element={<GalleryPage />} />
@@ -16,3 +18,4 @@ function App() {
 }
 
 export default App;
+
