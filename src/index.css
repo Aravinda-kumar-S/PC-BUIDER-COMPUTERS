@@ -1848,6 +1848,18 @@ a {
   margin-bottom: 48px;
 }
 
+.reviews-header .section-heading-line {
+  width: clamp(180px, 15vw, 220px) !important;
+  height: 4px !important;
+  background: #00D9FF !important;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8), 0 0 20px rgba(0, 217, 255, 0.4) !important;
+  margin-top: 36px !important;
+  margin-bottom: 36px !important;
+  padding: 0 !important;
+  border: none !important;
+  display: block !important;
+}
+
 .reviews-overall {
   display: flex;
   flex-direction: column;
