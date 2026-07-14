@@ -297,8 +297,8 @@ a {
 }
 
 .section-heading-line {
-  width: clamp(180px, 15vw, 220px);
-  height: 6px;
+  width: clamp(240px, 20vw, 280px);
+  height: 8px;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
   background-size: 300% 100%;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
@@ -306,7 +306,7 @@ a {
   margin-bottom: 90px;
   padding: 0;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 .recent-installations-container {
@@ -319,8 +319,8 @@ a {
 }
 
 .recent-installations-container .section-heading-line {
-  width: clamp(180px, 15vw, 220px) !important;
-  height: 6px !important;
+  width: clamp(240px, 20vw, 280px) !important;
+  height: 8px !important;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
   background-size: 300% 100% !important;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
@@ -329,7 +329,7 @@ a {
   padding: 0 !important;
   border: none !important;
   display: block !important;
-  border-radius: 3px !important;
+  border-radius: 4px !important;
 }
 
 .section-title {
@@ -715,12 +715,12 @@ a {
   left: 50%;
   transform: translateX(-50%);
   bottom: -30px;
-  width: clamp(180px, 95vw, 220px);
-  height: 6px;
+  width: clamp(240px, 20vw, 280px);
+  height: 8px;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
   background-size: 300% 100%;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 @keyframes lightning-glow {
@@ -1854,8 +1854,8 @@ a {
 }
 
 .reviews-header .section-heading-line {
-  width: clamp(180px, 15vw, 220px) !important;
-  height: 6px !important;
+  width: clamp(240px, 20vw, 280px) !important;
+  height: 8px !important;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
   background-size: 300% 100% !important;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
@@ -1864,7 +1864,7 @@ a {
   padding: 0 !important;
   border: none !important;
   display: block !important;
-  border-radius: 3px !important;
+  border-radius: 4px !important;
 }
 
 .reviews-overall {
