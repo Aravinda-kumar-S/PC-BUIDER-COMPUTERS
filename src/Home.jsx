@@ -1387,7 +1387,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         <div className="container">
           <div className="footer-grid">
             <div className="footer-brand">
-              <img src={pcBuilderLogo} alt="PC BUILD IN MADURAI" style={{ width: '140px', marginBottom: '12px', display: 'block' }} />
+              <img src={pcBuilderLogo} alt="PC BUILD IN MADURAI" style={{ width: '140px', marginBottom: '12px', display: 'block', marginLeft: '-10px' }} />
               <p>Specializing in custom high-performance gaming and editing computer setups. Built for enthusiasts, by enthusiasts.</p>
               <div className="footer-social-icons">
                 <a

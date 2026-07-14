@@ -6,83 +6,83 @@ import SectionHeading from './SectionHeading';
 // Source: https://maps.app.goo.gl/PCBUILDER
 const REVIEWS = [
   {
-    author: "Karthik Raja",
+    author: "Rock Gamers",
     rating: 5,
-    time: "2 weeks ago",
-    text: "Best PC building experience in Madurai! Got my gaming PC built with RTX 4060 and i5-13400F. Excellent cable management, free home delivery and installation. Highly recommend PCBUILDER Computers!",
-    avatar: "K",
+    time: "1 month ago",
+    text: "Great effort for this perfection!!! Such a perfect engineer I have found on Google for this monster setup. He gives the more ideas apart from the computer side. Actually, we contacted for the PC, but he created this dream setup which I had expected. The ultimate result is, he arranged and configured this height-adjustable table for this whole monitor setup including PC. All the items are fitted on a single table and the cable management is superb. I highly recommend this shop to anyone who wants their dream gaming machine.",
+    avatar: "R",
     color: "#7B2FFF"
   },
   {
-    author: "Sanjay Kumar",
-    rating: 5,
-    time: "1 month ago",
-    text: "Very professional team. They helped me choose the right components for my video editing workstation within budget. Setup was done perfectly at my home. 5 stars without a doubt!",
-    avatar: "S",
-    color: "#00C8FF"
-  },
-  {
-    author: "Priya Dharshini",
+    author: "Abhishek",
     rating: 5,
     time: "3 weeks ago",
-    text: "Superb service! I was confused about which PC to buy. The owner patiently explained everything and built a perfect office PC for my shop. Delivery and installation were both free. Amazing!",
-    avatar: "P",
-    color: "#8DFF00"
-  },
-  {
-    author: "Mohamed Riyaz",
-    rating: 5,
-    time: "1 month ago",
-    text: "Got my gaming setup here – PC, monitor, keyboard, mouse, everything. Quality is top notch. They installed everything at my home and even helped with cable routing on the desk. Really satisfied!",
-    avatar: "M",
-    color: "#FF6B35"
-  },
-  {
-    author: "Arun Prakash",
-    rating: 5,
-    time: "2 months ago",
-    text: "Excellent customer service. Visited the store and got a complete walkthrough of components. The build quality is outstanding – perfect airflow and RGB setup. Will definitely recommend to friends.",
+    text: "Great Gaming Pc Build And Great Price in this segment.Engineer Harish helped us very kindly And Service also very good. Trusted Pc Store in Tamilnadu to buy pc in affordable Prices 💯💯",
     avatar: "A",
-    color: "#7B2FFF"
-  },
-  {
-    author: "Deepika S",
-    rating: 5,
-    time: "3 months ago",
-    text: "Best place in Madurai for custom PC builds! Got a workstation for my photo editing work. They delivered and installed at my home in Trichy too. Genuine components with warranty. Trustworthy shop!",
-    avatar: "D",
     color: "#00C8FF"
   },
   {
-    author: "Vishnu Vardhan",
+    author: "Vishwa_MV _9901",
     rating: 5,
-    time: "3 months ago",
-    text: "Amazing experience! Ordered a high-end gaming rig. The team was very knowledgeable and helped optimize my build. Free doorstep installation was a huge plus. The PC runs flawlessly.",
+    time: "2 months ago",
+    text: "The best computer shop for assembled pc build. They have lot of customisation options for pc build which is very suitable for customer needs. I am impressed with their work, response and knowledge. They understand our situation and provided quick service which I have expected. Thank you mr.harish.",
     avatar: "V",
     color: "#8DFF00"
   },
   {
-    author: "Ramesh Babu",
+    author: "Shalini",
     rating: 5,
     time: "4 months ago",
-    text: "Trusted shop in Madurai. Got an office PC for my business. Very affordable price with genuine parts. Fast delivery and professional installation. Will come back for future upgrades.",
-    avatar: "R",
+    text: "I had an amazing experience with this PC builders! From the initial consultation to the final build, everything was handled professionally and with great attention to detail. They understood exactly what I needed for my gaming setup and Ai uses, recommended the perfect components within my budget. The cable management is super clean, performance is outstanding, and the system runs smoothly even on high settings. They also took the time to explain the specs, future upgrade options, and provided excellent after-sales support. If you’re looking for someone reliable, knowledgeable, and passionate about building high-performance gaming PCs, I highly recommend them. Absolutely worth every penny! 💯🎮",
+    avatar: "S",
     color: "#FF6B35"
   },
   {
-    author: "Nithya Priya",
+    author: "Namma Shivan Kovil",
     rating: 5,
-    time: "4 months ago",
-    text: "I needed a PC for my daughter's college studies. The team suggested the perfect build within budget. Delivered to our home in Anna Nagar and set everything up. Very happy with the service!",
+    time: "2 months ago",
+    text: "Excellent place to buy a PC! I recently bought a new system for my content creation work. The staff was very knowledgeable and helped me choose the right components within my budget. The assembly was neat and the performance is top-notch. Highly recommended for gamers and professional editors!",
     avatar: "N",
     color: "#7B2FFF"
   },
   {
-    author: "Suresh Murugan",
+    author: "naga arjun",
+    rating: 5,
+    time: "4 months ago",
+    text: "Awesome!!! A perfect gaming PC built from PC builder computers. He suggested more ideas according to my needs. From start to end, the whole process ran very smoothly. Door step delivery and installation are very helpful. The PC looks very professional because of excellent cable management. We also check the prices of other shops and he gives a very affordable range. He proves the results of work apart from the word.",
+    avatar: "N",
+    color: "#00C8FF"
+  },
+  {
+    author: "Ramya ganapathi",
+    rating: 5,
+    time: "4 months ago",
+    text: "Great deal. Best assembled pc from pcbuilder computers. They provided best service. Customers, if you looking for budget friendly pc build contact them.",
+    avatar: "R",
+    color: "#8DFF00"
+  },
+  {
+    author: "Raj Kumar",
     rating: 5,
     time: "5 months ago",
-    text: "Fantastic shop! Their knowledge about hardware is impressive. Built a trading workstation with dual monitor setup. Cable management was clean and professional. Best PC shop in Madurai, period.",
-    avatar: "S",
+    text: "We received excellent service and a high-quality build from PCBuilder. we originally planned to buy a branded desktop from a showroom, but PCBuilder suggested an assembled desktop at half the price. we are honestly surprised by this top-notch performance! we also appreciate the free door delivery and installation. Overall, it was a hassle-free process. Thank you, PCBuilder!!!",
+    avatar: "R",
+    color: "#FF6B35"
+  },
+  {
+    author: "Karthick Raja",
+    rating: 5,
+    time: "4 months ago",
+    text: "Thanks pcbuilder, We build a budget gaming pc build with the help of mr.harish. Very excellent service and response. Free home delivery and installation is very excellent.",
+    avatar: "K",
+    color: "#7B2FFF"
+  },
+  {
+    author: "VIGNESH",
+    rating: 5,
+    time: "6 months ago",
+    text: "Excellent Experience with PCBUILDER Computers. I recently purchased a laptop from PCBUILDER Computers, and the experience was outstanding from start to finish. Mr.Harish was knowledgeable, patient, and helped me choose the right laptop based on my needs and budget. He clearly explained the specifications, performance, and details, which made the decision easy and confident. The pricing was fair, the product was genuine, and the delivery/setup was quick and smooth. Overall, very professional service and great customer support. I highly recommend PC Builder to anyone looking to buy a laptop or computer accessories. Will definitely come back for future purchases!",
+    avatar: "V",
     color: "#00C8FF"
   }
 ];
@@ -175,7 +175,7 @@ export default function GoogleReviews() {
                   <Star key={i} size={20} fill="#FFD700" stroke="#FFD700" />
                 ))}
               </div>
-              <span className="reviews-count">301+ reviews</span>
+              <span className="reviews-count">310+ reviews</span>
             </div>
           </div>
         </div>
@@ -262,7 +262,7 @@ export default function GoogleReviews() {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            See All 301+ Google Reviews
+            See All 310+ Google Reviews
             <ExternalLink size={15} />
           </a>
 
