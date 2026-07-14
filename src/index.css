@@ -298,13 +298,15 @@ a {
 
 .section-heading-line {
   width: clamp(180px, 15vw, 220px);
-  height: 4px;
-  background: #00D9FF;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8), 0 0 20px rgba(0, 217, 255, 0.4);
+  height: 6px;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
+  background-size: 300% 100%;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
   margin-top: -52px;
   margin-bottom: 90px;
   padding: 0;
   border: none;
+  border-radius: 3px;
 }
 
 .recent-installations-container {
@@ -318,14 +320,16 @@ a {
 
 .recent-installations-container .section-heading-line {
   width: clamp(180px, 15vw, 220px) !important;
-  height: 4px !important;
-  background: #00D9FF !important;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8), 0 0 20px rgba(0, 217, 255, 0.4) !important;
+  height: 6px !important;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
+  background-size: 300% 100% !important;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
   margin-top: 26px !important;
   margin-bottom: 56px !important;
   padding: 0 !important;
   border: none !important;
   display: block !important;
+  border-radius: 3px !important;
 }
 
 .section-title {
@@ -711,11 +715,12 @@ a {
   left: 50%;
   transform: translateX(-50%);
   bottom: -30px;
-  width: clamp(180px, 15vw, 220px);
-  height: 4px;
-  background: #00D9FF;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8), 0 0 20px rgba(0, 217, 255, 0.4);
-  animation: lightning-glow 3s infinite;
+  width: clamp(180px, 95vw, 220px);
+  height: 6px;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
+  background-size: 300% 100%;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
+  border-radius: 3px;
 }
 
 @keyframes lightning-glow {
@@ -1850,14 +1855,16 @@ a {
 
 .reviews-header .section-heading-line {
   width: clamp(180px, 15vw, 220px) !important;
-  height: 4px !important;
-  background: #00D9FF !important;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.8), 0 0 20px rgba(0, 217, 255, 0.4) !important;
+  height: 6px !important;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
+  background-size: 300% 100% !important;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
   margin-top: 36px !important;
   margin-bottom: 36px !important;
   padding: 0 !important;
   border: none !important;
   display: block !important;
+  border-radius: 3px !important;
 }
 
 .reviews-overall {
@@ -4833,6 +4840,27 @@ svg {
     width: 100%;
     height: 100%;
     filter: drop-shadow(0 0 4px rgba(57, 255, 20, 0.5));
+  }
+}
+
+@keyframes rgb-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes rgb-glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(141, 255, 0, 0.85), 0 0 24px rgba(141, 255, 0, 0.45);
+  }
+  33% {
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.85), 0 0 24px rgba(0, 200, 255, 0.45);
+  }
+  66% {
+    box-shadow: 0 0 12px rgba(123, 47, 255, 0.85), 0 0 24px rgba(123, 47, 255, 0.45);
   }
 }
 
