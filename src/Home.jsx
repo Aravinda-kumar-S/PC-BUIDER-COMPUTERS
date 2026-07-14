@@ -1135,7 +1135,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             </video>
           </div>
 
-          <SectionHeading>Our Recent Installations</SectionHeading>
+          <SectionHeading containerClassName="recent-installations-container">Our Recent Installations</SectionHeading>
 
           <GalleryMarquee items={galleryItems} onImageClick={setLightboxImg} />
 
