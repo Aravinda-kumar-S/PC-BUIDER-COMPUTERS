@@ -297,8 +297,8 @@ a {
 }
 
 .section-heading-line {
-  width: clamp(240px, 20vw, 280px);
-  height: 8px;
+  width: clamp(240px, 100vw, 550px);
+  height: 3px;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
   background-size: 300% 100%;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
@@ -724,42 +724,53 @@ a {
 }
 
 @keyframes lightning-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 8px rgba(0, 217, 255, 0.8), 0 0 15px rgba(0, 217, 255, 0.4);
     opacity: 1;
   }
+
   45% {
     box-shadow: 0 0 8px rgba(0, 217, 255, 0.8), 0 0 15px rgba(0, 217, 255, 0.4);
     opacity: 1;
   }
+
   47% {
     box-shadow: 0 0 25px rgba(0, 217, 255, 1), 0 0 35px rgba(0, 217, 255, 0.8);
     opacity: 0.95;
   }
+
   49% {
     box-shadow: 0 0 4px rgba(0, 217, 255, 0.4), 0 0 8px rgba(0, 217, 255, 0.2);
     opacity: 0.3;
   }
+
   51% {
     box-shadow: 0 0 30px rgba(0, 217, 255, 1), 0 0 45px rgba(0, 217, 255, 0.9);
     opacity: 1;
   }
+
   53% {
     box-shadow: 0 0 8px rgba(0, 217, 255, 0.8), 0 0 15px rgba(0, 217, 255, 0.4);
     opacity: 0.85;
   }
+
   85% {
     box-shadow: 0 0 8px rgba(0, 217, 255, 0.8), 0 0 15px rgba(0, 217, 255, 0.4);
     opacity: 1;
   }
+
   87% {
     box-shadow: 0 0 28px rgba(0, 217, 255, 1), 0 0 40px rgba(0, 217, 255, 0.9);
     opacity: 0.9;
   }
+
   89% {
     box-shadow: 0 0 5px rgba(0, 217, 255, 0.5), 0 0 10px rgba(0, 217, 255, 0.25);
     opacity: 0.4;
   }
+
   91% {
     box-shadow: 0 0 25px rgba(0, 217, 255, 1), 0 0 35px rgba(0, 217, 255, 0.8);
     opacity: 1;
@@ -2357,15 +2368,14 @@ a {
 .bk-animated-box {
   position: relative;
   border-radius: 20px;
-  padding: 3px; /* border thickness */
-  background: conic-gradient(
-    from var(--bk-angle, 0deg),
-    #7b2fff 0deg,
-    #00c8ff 90deg,
-    #00e676 180deg,
-    #00c8ff 270deg,
-    #7b2fff 360deg
-  );
+  padding: 3px;
+  /* border thickness */
+  background: conic-gradient(from var(--bk-angle, 0deg),
+      #7b2fff 0deg,
+      #00c8ff 90deg,
+      #00e676 180deg,
+      #00c8ff 270deg,
+      #7b2fff 360deg);
   animation: bk-border-spin 4s linear infinite;
   max-width: 860px;
   margin: 0 auto;
@@ -2381,7 +2391,9 @@ a {
 }
 
 @keyframes bk-border-spin {
-  to { --bk-angle: 360deg; }
+  to {
+    --bk-angle: 360deg;
+  }
 }
 
 /* Pulsing glow ring */
@@ -2390,22 +2402,25 @@ a {
   position: absolute;
   inset: -4px;
   border-radius: 24px;
-  background: conic-gradient(
-    from var(--bk-angle, 0deg),
-    rgba(123, 47, 255, 0.4),
-    rgba(0, 200, 255, 0.4),
-    rgba(0, 230, 118, 0.4),
-    rgba(0, 200, 255, 0.4),
-    rgba(123, 47, 255, 0.4)
-  );
+  background: conic-gradient(from var(--bk-angle, 0deg),
+      rgba(123, 47, 255, 0.4),
+      rgba(0, 200, 255, 0.4),
+      rgba(0, 230, 118, 0.4),
+      rgba(0, 200, 255, 0.4),
+      rgba(123, 47, 255, 0.4));
   filter: blur(16px);
   z-index: -1;
   animation: bk-border-spin 4s linear infinite, bk-glow-pulse 3s ease-in-out infinite alternate;
 }
 
 @keyframes bk-glow-pulse {
-  from { opacity: 0.5; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Inner content background */
@@ -2413,13 +2428,11 @@ a {
   position: relative;
   border-radius: 18px;
   background:
-    repeating-linear-gradient(
-      0deg,
+    repeating-linear-gradient(0deg,
       transparent,
       transparent 3px,
       rgba(255, 255, 255, 0.012) 3px,
-      rgba(255, 255, 255, 0.012) 4px
-    ),
+      rgba(255, 255, 255, 0.012) 4px),
     linear-gradient(145deg, #0d0d1a 0%, #0a0a15 60%, #0d1020 100%);
   padding: clamp(28px, 4vw, 52px) clamp(20px, 4vw, 48px);
   overflow: hidden;
@@ -2429,8 +2442,10 @@ a {
 .bk-animated-box-inner::before {
   content: '';
   position: absolute;
-  top: 12px; left: 12px;
-  width: 18px; height: 18px;
+  top: 12px;
+  left: 12px;
+  width: 18px;
+  height: 18px;
   border-top: 2px solid var(--electric-blue);
   border-left: 2px solid var(--electric-blue);
   border-radius: 4px 0 0 0;
@@ -2441,8 +2456,10 @@ a {
 .bk-animated-box-inner::after {
   content: '';
   position: absolute;
-  bottom: 12px; right: 12px;
-  width: 18px; height: 18px;
+  bottom: 12px;
+  right: 12px;
+  width: 18px;
+  height: 18px;
   border-bottom: 2px solid var(--neon-green);
   border-right: 2px solid var(--neon-green);
   border-radius: 0 0 4px 0;
@@ -2451,8 +2468,14 @@ a {
 }
 
 @keyframes bk-corner-blink {
-  from { opacity: 0.5; }
-  to   { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px currentColor);
+  }
 }
 
 .bk-home-badge {
@@ -4596,9 +4619,9 @@ svg {
 /* Smooth CSS variable transition on root */
 :root {
   transition: --hover-primary 0.6s ease,
-              --hover-accent 0.6s ease,
-              --hover-glow 0.6s ease,
-              --hover-glow-soft 0.6s ease;
+    --hover-accent 0.6s ease,
+    --hover-glow 0.6s ease,
+    --hover-glow-soft 0.6s ease;
 }
 
 /* Register custom properties for smooth interpolation */
@@ -4772,9 +4795,12 @@ svg {
 
 /* ── Theme Transition Pulse Keyframes ── */
 @keyframes theme-glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 15px var(--hover-glow-soft);
   }
+
   50% {
     box-shadow: 0 0 25px var(--hover-glow);
   }
@@ -4782,6 +4808,7 @@ svg {
 
 /* ── Accessibility: Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -4809,7 +4836,15 @@ svg {
 }
 
 @media (pointer: fine) {
-  html, body, a, button, select, input, textarea, [role="button"] {
+
+  html,
+  body,
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  [role="button"] {
     cursor: none !important;
   }
 
@@ -4847,20 +4882,33 @@ svg {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 300% 50%;
   }
 }
 
 @keyframes rgb-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 12px rgba(141, 255, 0, 0.85), 0 0 24px rgba(141, 255, 0, 0.45);
   }
+
   33% {
     box-shadow: 0 0 12px rgba(0, 200, 255, 0.85), 0 0 24px rgba(0, 200, 255, 0.45);
   }
+
   66% {
     box-shadow: 0 0 12px rgba(123, 47, 255, 0.85), 0 0 24px rgba(123, 47, 255, 0.45);
   }
 }
 
+@keyframes green-cyan-glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(141, 255, 0, 0.85), 0 0 24px rgba(141, 255, 0, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.85), 0 0 24px rgba(0, 200, 255, 0.45);
+  }
+}
