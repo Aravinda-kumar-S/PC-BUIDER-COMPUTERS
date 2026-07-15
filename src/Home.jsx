@@ -1149,7 +1149,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
       {/* Brands Marquee */}
       <section className="brands-marquee">
-        <SectionHeading style={{ textAlign: 'center', paddingTop: '2rem', marginBottom: '1.5rem' }}>We Dealing With</SectionHeading>
+        <SectionHeading containerClassName="dealing-with-container" style={{ textAlign: 'center', paddingTop: '2rem', marginBottom: '1.5rem' }}>We Dealing With</SectionHeading>
         <div className="marquee-track">
           {[
             { name: 'MSI', file: '/logos/msi-new.png' },
