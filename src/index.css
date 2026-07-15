@@ -321,9 +321,9 @@ a {
 .recent-installations-container .section-heading-line {
   width: clamp(240px, 100vw, 580px) !important;
   height: 4px !important;
-  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--neon-green)) !important;
-  background-size: 200% 100% !important;
-  animation: rgb-slide 4s linear infinite, green-cyan-glow 3s ease-in-out infinite alternate !important;
+  background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
+  background-size: 300% 100% !important;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
   margin-top: 26px !important;
   margin-bottom: 56px !important;
   padding: 0 !important;
@@ -715,7 +715,7 @@ a {
   left: 50%;
   transform: translateX(-50%);
   bottom: -30px;
-  width: clamp(300px, 35vw, 420px);
+  width: clamp(300px, 35vw, 540px);
   height: 3px;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
   background-size: 300% 100%;
