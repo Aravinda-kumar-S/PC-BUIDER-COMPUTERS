@@ -1870,8 +1870,8 @@ a {
   background-image: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
   background-size: 300% 100% !important;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
-  margin-top: 36px !important;
-  margin-bottom: 36px !important;
+  margin-top: 6px !important;
+  margin-bottom: 156px !important;
   padding: 0 !important;
   border: none !important;
   display: block !important;
