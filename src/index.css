@@ -911,7 +911,9 @@ a {
   left: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(180deg, var(--neon-green), var(--rgb-purple));
+  background: linear-gradient(180deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
+  background-size: 100% 300%;
+  animation: rgb-slide-vertical 4s linear infinite, rgb-glow 4s linear infinite;
 }
 
 .about-tag {
@@ -4859,6 +4861,16 @@ svg {
 
   100% {
     background-position: 300% 0%;
+  }
+}
+
+@keyframes rgb-slide-vertical {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 0% 300%;
   }
 }
 

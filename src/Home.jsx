@@ -886,9 +886,9 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
 
               <p className="about-body-text">
                 A custom PC is more than just hardware — it's the foundation of your <span className="txt-blue">gaming</span>, <span className="txt-blue">content
-                  creation</span>, and <span className="txt-blue">professional workflow</span>. Our expert-built systems are engineered for{' '}
+                  creation</span> and <span className="txt-blue">professional workflow</span>. Our expert-built systems are engineered for{' '}
                 <span className="txt-blue">maximum cooling</span>, quieter operation,{' '}
-                <span className="txt-blue">higher FPS</span>, and{' '}
+                <span className="txt-blue">higher FPS</span> and{' '}
                 <span className="txt-blue">faster rendering performance</span> while maintaining
                 <span className="txt-blue"> outstanding stability</span>.
               </p>
@@ -930,12 +930,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Monitor size={28} /></div>
               <h3 className="why-title">Gaming PC</h3>
-              <p className="why-desc">High-FPS gaming rigs with the latest Intel/AMD processors and NVIDIA/AMD GPUs, optimized for the smoothest gameplay experience.</p>
+              <p className="why-desc">High-FPS gaming rigs with the latest Intel / AMD processors and NVIDIA / AMD GPUs, optimized for the smoothest gameplay experience.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Grid size={28} /></div>
               <h3 className="why-title">Editing PC</h3>
-              <p className="why-desc">4K/8K video editing workstations and photo editing powerhouses with fast NVMe storage, High Speed DDR5/DDR4 RAM and color-accurate display support.</p>
+              <p className="why-desc">4K / 8K video editing workstations and photo editing powerhouses with fast NVMe storage, High Speed DDR5 / DDR4 RAM and color-accurate display support.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Cpu size={28} /></div>
@@ -955,7 +955,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Wrench size={28} /></div>
               <h3 className="why-title">Deep Cleaning &amp; Upgrade</h3>
-              <p className="why-desc">Professional deep cleaning, thermal paste replacement,CPU/ RAM / SSD / GPU upgrades, OS / BIOS Upgrade and performance tuning for your existing system.</p>
+              <p className="why-desc">Professional deep cleaning, thermal paste replacement, CPU / RAM / SSD / GPU upgrades, OS / BIOS Upgrade and performance tuning for your existing system.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><ShieldCheck size={28} /></div>
@@ -965,7 +965,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Laptop size={28} /></div>
               <h3 className="why-title">Laptop Services</h3>
-              <p className="why-desc">Top laptop repair & maintenance: Screen/battery/Keyboard /Cooling fan replacements, SSD/RAM upgrades, BIOS upgrades,virus removal & Laptop performance optimization for all brands.</p>
+              <p className="why-desc">Top laptop repair & maintenance: Screen / battery/ Keyboard / Cooling fan replacements, SSD / RAM upgrades, BIOS upgrades, virus removal & Laptop performance optimization for all brands.</p>
             </div>
           </div>
         </div>
@@ -1270,7 +1270,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Wrench size={28} /></div>
               <h3 className="why-title">Free Doorstep Installation</h3>
-              <p className="why-desc">Our crew assembles, wires, and verifies performance right at your location — no setup hassle.</p>
+              <p className="why-desc">Our crew assembles, wires and verifies performance right at your location — no setup hassle.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><DollarSign size={28} /></div>
@@ -1280,12 +1280,12 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
             <div className="why-card glass-card">
               <div className="why-icon-container"><Sliders size={28} /></div>
               <h3 className="why-title">Premium Components</h3>
-              <p className="why-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair,NVIDIA,Deep Cool,Cooler Master,thermaltake,Zotac -zero grey-market components.</p>
+              <p className="why-desc">Only A-grade parts from ASUS, MSI, GIGABYTE, Intel, AMD, Corsair, NVIDIA, DeepCool, Cooler Master, Thermaltake, Zotac -zero grey-market components.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><Cpu size={28} /></div>
               <h3 className="why-title">Pro Cable Management</h3>
-              <p className="why-desc">Surgical cable routing for optimal airflow, dust resistance, and a showcase-ready build.</p>
+              <p className="why-desc">Surgical cable routing for optimal airflow, dust resistance and a showcase-ready build.</p>
             </div>
             <div className="why-card glass-card">
               <div className="why-icon-container"><ShieldCheck size={28} /></div>
