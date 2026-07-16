@@ -1296,6 +1296,9 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
         </div>
       </section>
 
+      {/* Google Reviews Section */}
+      <GoogleReviews />
+
       {/* Contact Section */}
       <section id="contact" className="contact-section">
         <div className="container">
@@ -1378,9 +1381,6 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
           </div>
         </div>
       </section>
-
-      {/* Google Reviews Section */}
-      <GoogleReviews />
 
       {/* Footer */}
       <footer className="footer-section">
