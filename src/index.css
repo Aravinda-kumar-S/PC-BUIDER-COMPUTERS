@@ -297,85 +297,61 @@ a {
 }
 
 .section-heading-line {
-  width: clamp(240px, 100vw, 550px);
+  display: block;
+  width: min(90%, 680px);
   height: 3px;
   background: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green));
   background-size: 300% 100%;
   animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite;
-  margin-top: -100px;
-  margin-bottom: 40px;
+  margin: 0 auto clamp(20px, 3vw, 40px) auto;
   padding: 0;
   border: none;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
-.recent-installations-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+/* Responsive overrides — mobile */
+@media (max-width: 480px) {
+  .section-heading-line {
+    width: calc(100% - 32px);
+    height: 2px;
+    margin-bottom: 18px;
+  }
 }
 
-.recent-installations-container .section-heading-line {
-  width: clamp(240px, 100vw, 540px) !important;
-  height: 4px !important;
-  background-image: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
-  background-size: 300% 100% !important;
-  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
-  margin-top: -20px !important;
-  margin-bottom: 56px !important;
-  padding: 0 !important;
-  border: none !important;
-  display: block !important;
-  border-radius: 4px !important;
+/* tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .section-heading-line {
+    width: min(88%, 600px);
+    height: 3px;
+    margin-bottom: 28px;
+  }
 }
 
+/* desktop */
+@media (min-width: 1025px) {
+  .section-heading-line {
+    width: min(70%, 720px);
+    height: 3px;
+    margin-bottom: 36px;
+  }
+}
+
+/* ── Container variants (no more !important fights) ── */
+.recent-installations-container,
 .we-dealing-with-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  margin: 0 auto !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
 }
 
+.recent-installations-container .section-heading-line,
 .we-dealing-with-container .section-heading-line {
-  width: clamp(240px, 100vw, 540px) !important;
-  height: 4px !important;
-  background-image: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
-  background-size: 300% 100% !important;
-  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
-  margin-top: -6px !important;
-  margin-bottom: 56px !important;
-  padding: 0 !important;
-  border: none !important;
-  display: block !important;
-  border-radius: 4px !important;
-}
-
-.reviews-heading-container {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-}
-
-.reviews-heading-container .section-heading-line {
-  width: clamp(240px, 100vw, 540px) !important;
-  height: 4px !important;
-  background-image: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
-  background-size: 300% 100% !important;
-  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
-  margin-top: -59px !important;
-  margin-bottom: 66px !important;
-  padding: 0 !important;
-  border: none !important;
-  display: block !important;
-  border-radius: 4px !important;
+  height: 4px;
+  margin-bottom: clamp(24px, 3.5vw, 56px);
 }
 
 .section-title {
@@ -1910,6 +1886,19 @@ a {
   margin-bottom: 48px;
 }
 
+.reviews-header .section-heading-line {
+  width: clamp(240px, 100vw, 540px) !important;
+  height: 4px !important;
+  background-image: linear-gradient(90deg, var(--neon-green), var(--electric-blue), var(--rgb-purple), var(--neon-green)) !important;
+  background-size: 300% 100% !important;
+  animation: rgb-slide 4s linear infinite, rgb-glow 4s linear infinite !important;
+  margin-top: -83px !important;
+  margin-bottom: 76px !important;
+  padding: 0 !important;
+  border: none !important;
+  display: block !important;
+  border-radius: 4px !important;
+}
 
 .reviews-overall {
   display: flex;
