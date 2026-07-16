@@ -39,12 +39,12 @@ const steps = [
 ];
 
 const faqs = [
-  { q: 'What is BookKeeper Accounting Software?', a: 'BookKeeper is a comprehensive accounting and GST billing software that helps businesses manage invoices, inventory, accounting, taxation, and financial reports.' },
-  { q: 'Is BookKeeper suitable for small businesses?', a: 'Yes. It is designed for startups, retailers, wholesalers, manufacturers, service providers, and SMEs.' },
-  { q: 'Does BookKeeper support GST billing?', a: 'Yes. It supports GST-compliant invoices, tax calculations, GST reports, and return preparation.' },
+  { q: 'What is BookKeeper Accounting Software?', a: 'BookKeeper is a comprehensive accounting and GST billing software that helps businesses manage invoices, inventory, accounting, taxation and financial reports.' },
+  { q: 'Is BookKeeper suitable for small businesses?', a: 'Yes. It is designed for startups, retailers, wholesalers, manufacturers, service providers and SMEs.' },
+  { q: 'Does BookKeeper support GST billing?', a: 'Yes. It supports GST-compliant invoices, tax calculations, GST reports and return preparation.' },
   { q: 'Can I manage inventory?', a: 'Yes. BookKeeper includes advanced inventory management with barcode support and stock tracking.' },
-  { q: 'Do you provide installation and training?', a: 'Yes. We provide installation, setup, user training, data migration, and ongoing technical support.' },
-  { q: 'Is technical support available?', a: 'Yes. Our team offers remote assistance, software updates, troubleshooting, and annual renewal support.' },
+  { q: 'Do you provide installation and training?', a: 'Yes. We provide installation, setup, user training, data migration and ongoing technical support.' },
+  { q: 'Is technical support available?', a: 'Yes. Our team offers remote assistance, software updates, troubleshooting and annual renewal support.' },
 ];
 
 const trustPoints = [
@@ -89,8 +89,8 @@ export default function BookKeeperPage() {
       >
         {/* WhatsApp SVG icon */}
         <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.117 1.52 5.847L0 24l6.335-1.495A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.371-.22-3.762.888.944-3.653-.242-.384A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.117 1.52 5.847L0 24l6.335-1.495A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.371-.22-3.762.888.944-3.653-.242-.384A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
         </svg>
       </a>
 
@@ -131,7 +131,7 @@ export default function BookKeeperPage() {
         </p>
         <p className="bkp-hero-desc">
           As an <span className="bkp-green">Authorized BookKeeper Sales Partner</span>, we provide genuine <span className="bkp-green">software
-          licenses</span>, <span className="bkp-green">professional installation</span>, complete setup, <span className="bkp-green">user training, technical support</span>, and annual renewal
+            licenses</span>, <span className="bkp-green">professional installation</span>, complete setup, <span className="bkp-green">user training, technical support</span>, and annual renewal
           services. Whether you're starting a new business or upgrading your accounting system, BookKeeper helps
           streamline your operations with <span className="bkp-green">accuracy, speed, and compliance</span>.
         </p>
@@ -152,7 +152,7 @@ export default function BookKeeperPage() {
           <h2 className="bkp-section-title">Why Choose BookKeeper?</h2>
           <p className="bkp-section-desc">
             Managing business accounts manually or using spreadsheets can be time-consuming and error-prone.
-            BookKeeper simplifies accounting, billing, inventory, taxation, and reporting with a user-friendly
+            BookKeeper simplifies accounting, billing, inventory, taxation and reporting with a user-friendly
             interface and powerful automation tools.
           </p>
           <div className="bkp-benefits-grid">
@@ -175,8 +175,8 @@ export default function BookKeeperPage() {
             {/* GST Billing */}
             <div className="bkp-feat-card glass-card">
               <h3 className="bkp-feat-title bkp-feat-title--green">GST Billing &amp; Invoicing</h3>
-              <p className="bkp-feat-desc">Create professional GST invoices with automatic tax calculations, HSN/SAC codes, and customer management.</p>
-              {['GST Tax Invoice','Retail Invoice','Purchase Invoice','Credit Note','Debit Note','GST Reports'].map((f,i) => (
+              <p className="bkp-feat-desc">Create professional GST invoices with automatic tax calculations, HSN / SAC codes and customer management.</p>
+              {['GST Tax Invoice', 'Retail Invoice', 'Purchase Invoice', 'Credit Note', 'Debit Note', 'GST Reports'].map((f, i) => (
                 <div key={i} className="bkp-feat-item"><Check size={14} className="bkp-check" /><span>{f}</span></div>
               ))}
             </div>
@@ -185,7 +185,7 @@ export default function BookKeeperPage() {
             <div className="bkp-feat-card glass-card">
               <h3 className="bkp-feat-title bkp-feat-title--blue">Complete Accounting</h3>
               <p className="bkp-feat-desc">Manage all your financial transactions from one platform.</p>
-              {['Sales & Purchases','Payments & Receipts','Expenses & Income','Ledger Management','Journal Entries','Bank Reconciliation'].map((f,i) => (
+              {['Sales & Purchases', 'Payments & Receipts', 'Expenses & Income', 'Ledger Management', 'Journal Entries', 'Bank Reconciliation'].map((f, i) => (
                 <div key={i} className="bkp-feat-item"><Check size={14} className="bkp-check" /><span>{f}</span></div>
               ))}
             </div>
@@ -194,7 +194,7 @@ export default function BookKeeperPage() {
             <div className="bkp-feat-card glass-card">
               <h3 className="bkp-feat-title bkp-feat-title--green">Inventory Management</h3>
               <p className="bkp-feat-desc">Track your stock efficiently with real-time inventory management.</p>
-              {['Product Management','Stock Availability','Batch & Serial Number Tracking','Warehouse Management','Low Stock Alerts','Barcode Support'].map((f,i) => (
+              {['Product Management', 'Stock Availability', 'Batch & Serial Number Tracking', 'Warehouse Management', 'Low Stock Alerts', 'Barcode Support'].map((f, i) => (
                 <div key={i} className="bkp-feat-item"><Check size={14} className="bkp-check" /><span>{f}</span></div>
               ))}
             </div>
@@ -203,7 +203,7 @@ export default function BookKeeperPage() {
             <div className="bkp-feat-card glass-card">
               <h3 className="bkp-feat-title bkp-feat-title--blue">Financial Reports</h3>
               <p className="bkp-feat-desc">Generate detailed business reports instantly.</p>
-              {['Profit & Loss Statement','Balance Sheet','Trial Balance','Cash Flow Statement','GST Reports','Sales & Purchase Reports','Outstanding Reports','Ledger Reports'].map((f,i) => (
+              {['Profit & Loss Statement', 'Balance Sheet', 'Trial Balance', 'Cash Flow Statement', 'GST Reports', 'Sales & Purchase Reports', 'Outstanding Reports', 'Ledger Reports'].map((f, i) => (
                 <div key={i} className="bkp-feat-item"><Check size={14} className="bkp-check" /><span>{f}</span></div>
               ))}
             </div>
@@ -218,7 +218,7 @@ export default function BookKeeperPage() {
             <div className="bkp-feat-card glass-card">
               <h3 className="bkp-feat-title bkp-feat-title--blue">Secure Business Data</h3>
               <p className="bkp-feat-desc">Your business information is protected with secure backup and user access controls.</p>
-              {['Password Protection','Automatic Backup','User Permissions','Data Recovery Support'].map((f,i) => (
+              {['Password Protection', 'Automatic Backup', 'User Permissions', 'Data Recovery Support'].map((f, i) => (
                 <div key={i} className="bkp-feat-item"><Check size={14} className="bkp-check" /><span>{f}</span></div>
               ))}
             </div>
@@ -286,27 +286,27 @@ export default function BookKeeperPage() {
               <div className="bkp-form-group">
                 <label>Full Name *</label>
                 <input required className="bkp-input" placeholder="Enter your name"
-                  value={form.name} onChange={e => setForm({...form, name: e.target.value})} />
+                  value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
               </div>
               <div className="bkp-form-group">
                 <label>Mobile Number *</label>
                 <input required type="tel" className="bkp-input" placeholder="+91 XXXXX XXXXX"
-                  value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} />
+                  value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
               </div>
               <div className="bkp-form-group">
                 <label>Business Name *</label>
                 <input required className="bkp-input" placeholder="Your business name"
-                  value={form.business} onChange={e => setForm({...form, business: e.target.value})} />
+                  value={form.business} onChange={e => setForm({ ...form, business: e.target.value })} />
               </div>
               <div className="bkp-form-group">
                 <label>Location / City *</label>
                 <input required className="bkp-input" placeholder="Your city"
-                  value={form.location} onChange={e => setForm({...form, location: e.target.value})} />
+                  value={form.location} onChange={e => setForm({ ...form, location: e.target.value })} />
               </div>
               <div className="bkp-form-group form-full">
                 <label>Business Type *</label>
                 <select required className="bkp-input"
-                  value={form.type} onChange={e => setForm({...form, type: e.target.value})}>
+                  value={form.type} onChange={e => setForm({ ...form, type: e.target.value })}>
                   <option value="">-- Select Business Type --</option>
                   {businessTypes.map((t, i) => <option key={i} value={t}>{t}</option>)}
                 </select>
@@ -315,7 +315,7 @@ export default function BookKeeperPage() {
                 <label>Business Requirement <span className="bkp-optional">(Optional)</span></label>
                 <textarea className="bkp-input bkp-textarea"
                   placeholder="e.g. Looking for GST billing, inventory management, and multi-user accounting."
-                  value={form.requirement} onChange={e => setForm({...form, requirement: e.target.value})} />
+                  value={form.requirement} onChange={e => setForm({ ...form, requirement: e.target.value })} />
               </div>
             </div>
             <button type="submit" className="bkp-btn-submit">
@@ -369,7 +369,7 @@ export default function BookKeeperPage() {
 
               <div className="bkp-contact-row">
                 <div className="bkp-contact-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">Address</h4>
@@ -382,7 +382,7 @@ export default function BookKeeperPage() {
 
               <div className="bkp-contact-row">
                 <div className="bkp-contact-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.68 13.6 19.79 19.79 0 0 1 1.5 5.05 2 2 0 0 1 3.5 2.87h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.9a16 16 0 0 0 6.29 6.29l1.31-1.31a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.13z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.68 13.6 19.79 19.79 0 0 1 1.5 5.05 2 2 0 0 1 3.5 2.87h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 10.9a16 16 0 0 0 6.29 6.29l1.31-1.31a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 18.13z" /></svg>
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">Phone Number</h4>
@@ -392,13 +392,13 @@ export default function BookKeeperPage() {
 
               <div className="bkp-contact-row">
                 <div className="bkp-contact-icon bkp-contact-icon--wa">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.117 1.52 5.847L0 24l6.335-1.495A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.371-.22-3.762.888.944-3.653-.242-.384A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z" /><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.117 1.52 5.847L0 24l6.335-1.495A11.935 11.935 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.652-.51-5.17-1.399l-.371-.22-3.762.888.944-3.653-.242-.384A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" /></svg>
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">WhatsApp</h4>
                   <p>
                     <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="bkp-contact-link">
-                    +91 8667864448
+                      +91 8667864448
                     </a>
                   </p>
                 </div>
@@ -406,7 +406,7 @@ export default function BookKeeperPage() {
 
               <div className="bkp-contact-row">
                 <div className="bkp-contact-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                 </div>
                 <div className="bkp-contact-details">
                   <h4 className="bkp-contact-h4">Business Hours</h4>
@@ -429,7 +429,7 @@ export default function BookKeeperPage() {
             the tools to manage billing, GST, inventory, and finances with confidence.
           </p>
           <div className="bkp-final-pills">
-            {['Genuine BookKeeper License','Book Now & Get Started','Professional Installation','User Training','Technical Support'].map((p,i) => (
+            {['Genuine BookKeeper License', 'Book Now & Get Started', 'Professional Installation', 'User Training', 'Technical Support'].map((p, i) => (
               <span key={i} className="bkp-final-pill"><Check size={14} />{p}</span>
             ))}
           </div>

@@ -900,7 +900,7 @@ _Please review this configuration and send me a price estimate. Thank you!_`;
                   'Professional Cable Management for improved airflow and a clean finish.',
                   'Benchmark, Thermal & Hardware Stress Testing for maximum stability.',
                   'Plug-and-Play Windows Installation, Driver Setup & BIOS Optimization.',
-                  'XMP/EXPO Memory Configuration for peak RAM performance.',
+                  'XMP / EXPO Memory Configuration for peak RAM performance.',
                   'Safe CPU & GPU Performance Tuning using premium thermal solutions.',
                   'Genuine Components with Official Manufacturer Warranties.',
                   'Lifetime Technical Support and expert after-sales assistance.',
