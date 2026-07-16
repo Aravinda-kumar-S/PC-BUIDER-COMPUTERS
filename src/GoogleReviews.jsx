@@ -156,7 +156,7 @@ export default function GoogleReviews() {
 
         {/* Section Header */}
         <div className="reviews-header">
-          <SectionHeading containerClassName="reviews-heading-container">What Our Customers Say</SectionHeading>
+          <SectionHeading>What Our Customers Say</SectionHeading>
           <div className="reviews-overall">
             <div className="reviews-google-badge">
               {/* Google "G" Logo */}
